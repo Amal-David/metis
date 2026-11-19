@@ -1,0 +1,51 @@
+{
+  "suite_id": "metis-diagnostic-20261119-v1",
+  "task_count": 12,
+  "raw_solver_file": "tasks.json",
+  "evaluator_only": [
+    "private/checkers.py",
+    "private/gold.json",
+    "private/rubric.md"
+  ],
+  "primary_order": [
+    "Q01",
+    "Q02",
+    "Q03",
+    "Q04",
+    "Q05",
+    "Q06",
+    "Q07",
+    "Q08",
+    "Q09",
+    "Q10",
+    "Q11",
+    "Q12"
+  ],
+  "optional_order": [
+    "Q08",
+    "Q03",
+    "Q11",
+    "Q05",
+    "Q01",
+    "Q09",
+    "Q06",
+    "Q12",
+    "Q02",
+    "Q10",
+    "Q04",
+    "Q07"
+  ],
+  "sha256": {
+    "tasks.json": "630da748a538a9a7649d6fb18e4ffed537c1a6df3fc71215c4237b3ae5fd7b32",
+    "PROTOCOL.md": "eeefde57e5d0186e2aba229db2bff1d3e81499ad8dffdd926b8b3a7dd4f26116",
+    "private/checkers.py": "3a90c2220922b0fe9e5ec341a1e6d1aad37b7f622375d27d56c15f79a2684a3a",
+    "private/rubric.md": "67395960974d86a931569d94ffa3fd8da3a1e33899eef0bdd0489cbdfb27bfe2",
+    "private/gold.json": "fd9900cc2be5d82668d58a5de4a5e2b844f7920a3711283470c5d2ce090b0889"
+  },
+  "limits": [
+    "Shared filesystem exclusion is instructional, not OS-enforced.",
+    "No SVG/visual perception tasks in this checkpoint.",
+    "Q09 tests query planning only.",
+    "Q01/Q02 golds are intended simple models, not unique unrestricted rules."
+  ]
+}

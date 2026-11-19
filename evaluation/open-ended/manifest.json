@@ -1,0 +1,8 @@
+{
+  "suite_id": "metis-open-action-probes-20261119",
+  "scope": "development behavior checks, not independent benchmark",
+  "sha256": {
+    "tasks.json": "fe0a052df816d8b53687faba620b4b25f1d8ea9c90adfc80a8a7b04ceb6cc1ad",
+    "private/rubric.md": "990d3d3898eb724d9e5c556114fe848ebf0f4e9a794f43a658467e7bf4a52463"
+  }
+}

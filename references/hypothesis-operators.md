@@ -1,6 +1,6 @@
 # Nine hypothesis-generation moves
 
-These are **launchpads for invention**, not a checklist or a finite set of puzzle types. Independently inspect the artifact before retrieval. Select a move because an observation calls for it, then develop a new mechanism that makes a risky prediction.
+These are **launchpads for invention**, not a checklist or a finite set of puzzle types. Independently inspect the artifact before retrieval. Select a move because an observation calls for it, then explore what the new view makes visible. Develop a risky prediction once a mechanism is concrete. An exploratory action can be valuable before rivals have predictions; state what it could teach and how you will use the result.
 
 ## 1. Role reassignment
 
@@ -76,11 +76,11 @@ These are **launchpads for invention**, not a checklist or a finite set of puzzl
 
 **Trigger:** The artifact combines geometry, wording, sound, typography, count or metadata.
 
-**Move:** Independently extract constraints from two channels; seek one mechanism satisfying both. Do not invent a hybrid to patch a bad first channel.
+**Move:** Extract constraints from different channels and let them constrain each other while preserving alternative readings. Seek one mechanism satisfying both. Joint fitting is legitimate discovery; it is not independent validation. Do not invent a hybrid solely to patch a contradiction.
 
 **Seed:** A geometric pairing rule may predict both coarse symbol families and fine variants.
 
-**Test:** Freeze rule on channel A, evaluate consequences on untouched B. **Failure:** all channels were optimized together yet called independent.
+**Test:** Recheck earlier constraints after each exchange. When B is genuinely untouched, freeze a rule from A and predict B; otherwise report a retrospective consistency check. **Failure:** jointly optimized channels are called independent, or a guessed label becomes an unquestioned premise.
 
 ## 9. Residual inversion
 
@@ -99,7 +99,7 @@ Do not stop at these nine. Define a new move when a puzzle demands it:
 1. Name the **source observation** that made the move plausible.
 2. Specify the **change in object, relation, or allowable operation**.
 3. Show the **new consequences** made visible by that change.
-4. Identify an **existing alternative** and a **falsifier**.
+4. If the mechanism is concrete, identify a rival and falsifier. If it is a rough seed, choose a cheap exploration that could make it concrete; do not invent precision.
 5. Retain a short case note if it transfers across unrelated puzzles.
 
 Avoid rewarding the appearance of novelty alone. Novelty is useful only when it changes what can be tested.

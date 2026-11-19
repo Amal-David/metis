@@ -21,4 +21,9 @@ jobs:
       - name: Validate local registry and retrieval
         run: |
           python -m unittest discover -s tests -v
+          python scripts/retrieve_cases.py --validate
           python scripts/retrieve_cases.py "edge representation" --limit 2 > /dev/null
+      - name: Check authored package and frozen arithmetic fixtures
+        run: |
+          python scripts/validate_package.py
+          python evaluation/private/checkers.py

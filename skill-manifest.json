@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "files": {
+    "SKILL.md": "cf13d14021620fac0036611473138cc5b985197189a9d40f923140b69ce4041c",
+    "references/cases.json": "eae909c8e57a487ffe104c94e39366ef6944d70cc7a8abc2242d43092f8ff143",
+    "references/contrast-examples.md": "051be2bf5da5e5b748a8f20a806b13739d55273d315efc69176dba44afb7d204",
+    "references/corpus-audit.md": "1ffd885f93e60c050a3facee5417f385ecb7e8e22e8710384d890b36c5a2adbe",
+    "references/evaluation.md": "0707b45bd133e88f2b9be09abf290078c46adeb339b229ea6f759969197a102c",
+    "references/experiments.md": "2abb8a43321ec66a0836904f3db57cbcd7302b7ba8812464a6f10520a3c73dea",
+    "references/hypothesis-operators.md": "cc4f69fc0fe0c773e3b89d0dd72851d90013b4560948e71982d6d6b8276f831d",
+    "references/mechanism-atlas.md": "7b1aaec3b587f81bb38eb4ff485d22fc5dfd5b770e8a40796732153fe5af0152",
+    "references/polya.md": "0ea5bb4670a6d511ec1b38c7fc0777db08b7b4e9027119d1831e8ee680dce617",
+    "references/research-protocol.md": "5c7d254dccfc8ea47cb7e7c1e04d6775082f780ef709edc3ceffd290218f76f5",
+    "references/research-sources.md": "4d864c7a5b959f83a0b022995a9efd9874b000d069423d09284323692a31dafc",
+    "references/sources.md": "8d51cb0c49ae65d06d3e75f4d92a848c3bd5f7685534c84890f3b7c35b46e47f",
+    "scripts/retrieve_cases.py": "cbfdb8eaab86d4161d11b16472c8d49fb569b897d55009cb1a36436fb8ba67e8"
+  },
+  "scope": "Authored reasoning, knowledge and retrieval files. Platform-managed UI metadata and repository evaluation tools are excluded."
+}

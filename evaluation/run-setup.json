@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-19",
+  "timezone": "Asia/Calcutta",
+  "model": "inherited host model; exact snapshot and seed unavailable; no overrides",
+  "core_sha256": "cf13d14021620fac0036611473138cc5b985197189a9d40f923140b69ce4041c",
+  "corpus_sha256": "eae909c8e57a487ffe104c94e39366ef6944d70cc7a8abc2242d43092f8ff143",
+  "requested_caps": {
+    "main_words": 3500,
+    "main_tools": 12,
+    "open_words": 1500,
+    "open_nested_tools": 6
+  },
+  "conditions": {
+    "A": "baseline",
+    "B": "core only",
+    "C": "core plus atlas and two required case queries",
+    "D": "open baseline",
+    "E": "open core and optional references/retrieval"
+  },
+  "limits": [
+    "One fresh batch per arm, same main task order; no controlled seed or repeated model trials",
+    "No wall-clock stop enforced; internal tokens and time to first hypothesis unavailable",
+    "Main prompt wording closely matched, not byte-identical; exact prompts retained",
+    "Full arm includes atlas and case retrieval, not isolated retrieval ablation",
+    "Agents counted orchestration and logical operations differently; main arms each report three underlying command executions; no independent tool-log audit",
+    "Shared filesystem exclusions are instructional, not OS enforced",
+    "Q01/Q02 disclosure removed before trials; no rubric or task modified after responses",
+    "Open scenarios authored by coordinator after reading skill; development checks, not independent benchmark"
+  ]
+}

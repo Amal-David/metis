@@ -1,0 +1,262 @@
+{
+  "results": [
+    {
+      "id": "Q01",
+      "answer": {
+        "mechanism": "Count exposed unit tile edges: P = 4N - 2E, where E counts shared full sides.",
+        "predicted_reading": 14,
+        "unique_unrestricted_rule": false
+      },
+      "status": "conditional",
+      "evidence": "The target has N=6 tiles and E=5 shared sides, so P=24-10=14. For a 2-by-2 block, N=4 and E=4 give 8; for a four-tile row, E=3 gives 10. A single tile gives 4, a sharing pair gives 6, and four isolated tiles give 16. These finitely many observations do not exclude rules that agree on all examples but differ on the target."
+    },
+    {
+      "id": "Q02",
+      "answer": {
+        "mechanism": "Count individual segment toggles, adding the symmetric-difference sizes for the two fixed display positions.",
+        "predicted_reading": 5,
+        "position_counts": [
+          4,
+          1
+        ],
+        "unique_unrestricted_rule": false
+      },
+      "status": "conditional",
+      "evidence": "For 23 to 59, left position 2 to 5 switches b,e off and c,f on: 4 toggles. Right position 3 to 9 switches f on: 1 toggle. Total 5. The examples give 11 to 77: 1+1=2; 12 to 21: 5+5=10; 88 to 88: 0; and 00 to 88: 1+1=2. Other unrestricted rules can fit these observations and differ on an unobserved update."
+    },
+    {
+      "id": "Q03",
+      "answer": {
+        "symmetry": "Reflection across the vertical centerline x=0.5 (left-right reflection).",
+        "rotation_alone_sufficient": false,
+        "observed_dot": [
+          0.8,
+          0.35
+        ]
+      },
+      "status": "solved",
+      "evidence": "The corner mapping is NW to NE, NE to NW, SE to SW, and SW to SE, exactly matching all four distinct symbols. No rotation has this corner permutation. The reflection acts by (x,y) to (1-x,y), giving (0.80,0.35)."
+    },
+    {
+      "id": "Q04",
+      "answer": {
+        "allowed_position_pairs": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "display_for_3412": 4,
+        "shortest_sequence": [
+          "3412",
+          "3142",
+          "3124",
+          "1324",
+          "1234"
+        ],
+        "swapped_position_pairs": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "status": "solved",
+      "evidence": "The three distance-one readings require pairs (1,2), (2,3), and (3,4). Arrangements 3214, 1432, and 4231 are respectively single transpositions at (1,3), (2,4), and (1,4); their distances greater than one exclude all three remaining pairs. Adjacent-swap distances equal inversion counts, reproducing 3,3,5 for those readings. Arrangement 3412 has four inversions, so at least four adjacent swaps are required; the displayed sequence achieves four. Breadth-first search over all 24 permutations independently verifies the readings and path."
+    },
+    {
+      "id": "Q05",
+      "answer": {
+        "compatible_codes": [
+          "143",
+          "325"
+        ],
+        "uniquely_determined": false,
+        "resolving_yes_no_question": "Is B equal to 2?",
+        "yes_answer_code": "325",
+        "no_answer_code": "143"
+      },
+      "status": "ambiguous",
+      "evidence": "A=5-B and C=7-B. Since B is even and A must be at least 1, B can only be 2 or 4. These give 325 and 143 respectively; both obey every condition.",
+      "next_test": "Ask whether B=2; the two answers distinguish the two compatible codes."
+    },
+    {
+      "id": "Q06",
+      "answer": {
+        "path_exists": false
+      },
+      "status": "impossible",
+      "evidence": "Color each cell by the parity of row+column. Every allowed move switches color. A path through all 12 cells has 11 moves, so its endpoints must have opposite colors. Both (1,1) and (3,3) have even row+column, contradicting the required endpoint colors."
+    },
+    {
+      "id": "Q07",
+      "answer": {
+        "hidden_digit": 1,
+        "correction": {
+          "row": 3,
+          "column": 4,
+          "from": 8,
+          "to": 9
+        },
+        "repaired_rows": [
+          [
+            2,
+            7,
+            6,
+            1
+          ],
+          [
+            4,
+            1,
+            6,
+            9
+          ],
+          [
+            8,
+            3,
+            4,
+            9
+          ],
+          [
+            6,
+            9,
+            4,
+            1
+          ]
+        ],
+        "unique": true
+      },
+      "status": "solved",
+      "evidence": "Both equations check as follows: row 1 gives (2+14,4+7) mod 10=(6,1); row 2 gives (4+2,8+1)=(6,9); row 3 gives (8+6,16+3) mod 10=(4,9); row 4 gives (6+18,12+9) mod 10=(4,1). Row 3 is inconsistent as written, so it must contain the single visible error. In that row, changing a alone is excluded because the c equation already forces a=8; changing b would require b in {3,8} from c but b=2 from d; changing c leaves the d equation wrong. Thus only d can change, to 9. Row 2 must then satisfy both equations unchanged, forcing b=1. Exhaustive enumeration of all 100 possible (a,b) pairs for each row yields exactly this one repair with one visible error."
+    },
+    {
+      "id": "Q08",
+      "answer": {
+        "highlight_possible_probability": "1121/2048",
+        "favorable_strings": 2242,
+        "total_strings": 4096,
+        "one_sixteenth_assesses_actual_reporting_rule": false
+      },
+      "status": "solved",
+      "evidence": "Enumerating all 2^12=4096 bit strings and counting those containing 0000 or 1111 gives 2242, hence 2242/4096=1121/2048. As a counting check, a string avoiding both patterns has runs of lengths 1,2,3. There are 927 compositions of 12 into these lengths, from T0=1,T1=1,T2=2 and Tn=T(n-1)+T(n-2)+T(n-3) for n>=3. Choosing the initial bit gives 2*927=1854 avoiding strings, leaving 2242. Probability 1/16 applies to 1111 at one prespecified window. The actual reporting rule searches all nine overlapping windows and allows either constant pattern; overlapping windows were not treated as independent."
+    },
+    {
+      "id": "Q09",
+      "answer": {
+        "first_query": "A",
+        "first_reply_candidates": {
+          "0": [
+            "H0",
+            "H1",
+            "H2",
+            "H3"
+          ],
+          "1": [
+            "H4",
+            "H5",
+            "H6",
+            "H7"
+          ]
+        },
+        "continuation": "Query B next and C last; identify the state whose binary label is the three replies ABC.",
+        "after_A_and_B": {
+          "00": [
+            "H0",
+            "H1"
+          ],
+          "01": [
+            "H2",
+            "H3"
+          ],
+          "10": [
+            "H4",
+            "H5"
+          ],
+          "11": [
+            "H6",
+            "H7"
+          ]
+        },
+        "final_C_reply": "C=0 selects the even-indexed member of the remaining pair; C=1 selects the odd-indexed member.",
+        "optimal_worst_case_queries": 3,
+        "other_optimal_first_queries": [
+          "B",
+          "C"
+        ]
+      },
+      "status": "solved",
+      "evidence": "A binary decision tree of depth k has at most 2^k leaves, so identifying eight states requires at least three queries in the worst case. Querying the three label bits achieves that bound. Starting with D would leave only H0 if its reply were 1, but seven states H1 through H7 if its reply were 0; two further binary queries can distinguish at most four states, so D cannot guarantee identification within the budget. No oracle reply or hidden state is assumed."
+    },
+    {
+      "id": "Q10",
+      "answer": {
+        "x": 7
+      },
+      "status": "solved",
+      "evidence": "3x=28-7=21, so x=7; substitution gives 3*7+7=28."
+    },
+    {
+      "id": "Q11",
+      "answer": {
+        "token_box": "A",
+        "sign_truth_values": {
+          "A": false,
+          "B": true,
+          "C": false
+        }
+      },
+      "status": "solved",
+      "evidence": "The A and B signs are logical opposites, so exactly one of them is always true. To have exactly one true sign overall, the C sign must be false, which means the token is in A. Then the statements that the token is in B, not in B, and not in A are respectively false, true, false."
+    },
+    {
+      "id": "Q12",
+      "answer": {
+        "groups": [
+          [
+            2,
+            4,
+            7
+          ],
+          [
+            3,
+            5,
+            6
+          ]
+        ],
+        "totals": [
+          13,
+          14
+        ],
+        "minimum_absolute_difference": 1
+      },
+      "status": "solved",
+      "evidence": "All six weights sum to 27. Integer group totals with an odd sum cannot be equal, so their absolute difference is at least 1. These two groups each contain three weights and achieve totals 13 and 14, meeting that bound."
+    }
+  ],
+  "tool_calls_used": 6,
+  "resources_used": [
+    "/workspace/scratch/7d3a3fa6bb12/metis/evaluation/tasks.json (only input file)",
+    "Self-written bounded Python scratch calculations using only the standard library; no web, skills, subagents, repository instructions, or other reference documents.",
+    "Tool count includes three functions.exec orchestration calls and their three nested exec_command calls, including the final output write."
+  ]
+}

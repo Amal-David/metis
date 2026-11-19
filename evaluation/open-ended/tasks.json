@@ -1,0 +1,17 @@
+{
+  "suite_id": "metis-open-action-probes-20261119",
+  "tasks": [
+    {
+      "id": "E01",
+      "prompt": "Help make progress on this unfinished puzzle. There are two rectangular translucent cards of equal size. Each has isolated black strokes that do not read as characters on its own. Four small registration marks on the left edge of the first card match four marks on the right edge of the second. There is a small dot near one corner of each card, and several strokes are asymmetric. The title is 'Same difference'. You may handle copies; no alignment or transformation has yet been tried. There is no complete image available in this conversation, so do not claim to have inspected an overlay. What would you do next, and what could you learn?"
+    },
+    {
+      "id": "E02",
+      "prompt": "Help make progress on an unfamiliar symbol puzzle. Every symbol consists of three parallel horizontal lines, each either continuous or broken in the middle. All eight possible variants occur. The page arranges the symbols in ordered pairs; a small compass rose is printed at the top, and some pairs are linked by arrows. There is no supplied legend or answer format. Describe a useful next step and develop any promising interpretations far enough to explain how you would check them. Do not assume the compass or arrows have a particular job without evidence."
+    },
+    {
+      "id": "E03",
+      "prompt": "Help continue a stuck investigation. A page has a 5-by-5 array of pictograms, with one visibly empty cell and five objects shown in an unusual state (for example, a cup on its side). A prior solver tried object-name initials, many reading orders and several shifts, eventually producing a plausible five-letter word after replacing three object labels with synonyms. The unused symbols and empty cell have not been explained, and all displayed labels have already been seen. There is no image or oracle access in this conversation. What would you investigate next? Give concrete, clue-grounded possibilities and a useful way to choose between them; say what the current result establishes."
+    }
+  ]
+}

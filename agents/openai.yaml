@@ -1,0 +1,4 @@
+interface:
+  display_name: "Metis"
+  short_description: "Invent and test mechanisms for unfamiliar puzzles"
+  default_prompt: "Use $metis to discover this puzzle’s mechanism, choose useful tests, and verify the result."

@@ -1,0 +1,1311 @@
+{
+  "schema_version": "1.0",
+  "assessment_type": "partially blinded output-only diagnostic",
+  "read_scope": [
+    "evaluation/assessment/inputs.json",
+    "evaluation/private/rubric.md",
+    "evaluation/private/gold.json"
+  ],
+  "not_read": [
+    "arm-key.json",
+    "SKILL.md",
+    "source libraries",
+    "other reports",
+    "other runs",
+    "checkers.py"
+  ],
+  "dimension_policy": {
+    "final_correctness": "0-2 on every item; full ambiguity, impossibility, and query-plan answers count as complete; conditional induction is not required to be unrestrictedly unique.",
+    "calibration": "0-2 on every item, judged from visible conclusions and status; execution provenance remains unassessed where no trace was supplied.",
+    "target_mechanism": {
+      "applicable": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q12"
+      ],
+      "otherwise": "N/A"
+    },
+    "meaningful_alternatives": {
+      "applicable": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q07",
+        "Q08",
+        "Q09"
+      ],
+      "otherwise": "N/A",
+      "induction_policy": "Task-required unrestricted ambiguity can receive full credit without a catalog of named alternatives; additional named alternatives are not automatically extra credit."
+    },
+    "discriminating_test": {
+      "applicable": [
+        "Q01",
+        "Q02",
+        "Q04",
+        "Q05",
+        "Q07",
+        "Q08",
+        "Q09"
+      ],
+      "otherwise": "N/A",
+      "operational_interpretation": "A separating query with differing predictions, decisive proof, or complete finite candidate/event verification earns 2. Fitting supplied examples without a concrete separating comparison earns 1. Plans are not reported as executions."
+    },
+    "aggregation": "Dimensions remain separate; no weighted composite."
+  },
+  "responses": {
+    "R17": {
+      "items": [
+        {
+          "id": "Q01",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": 2,
+            "meaningful_alternatives": 2,
+            "discriminating_test": 1,
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Correct conditional perimeter prediction 14 from six tiles and five shared sides; every supplied example is fitted, including the different four-tile arrangements; unrestricted uniqueness is correctly rejected.",
+            "meaningful_alternatives": "Full credit for the task-required unrestricted nonuniqueness: a rule can agree on all observed inputs yet differ elsewhere. A concrete extra mechanism is not required for this ambiguity conclusion.",
+            "discriminating_test": "Relevant in-sample checks reproduce all observations, but no concrete competing mechanism with a separating predicted outcome is specified. This is relevant but nondiscriminating verification (1), not complete verification of an unrestricted rule.",
+            "calibration": "Explicitly conditional prediction and explicit rejection of unrestricted uniqueness; no overclaim that the mechanism is logically forced."
+          },
+          "deductions": [
+            {
+              "dimension": "discriminating_test",
+              "points_lost": 1,
+              "reason": "Relevant in-sample checks reproduce all observations, but no concrete competing mechanism with a separating predicted outcome is specified. This is relevant but nondiscriminating verification (1), not complete verification of an unrestricted rule."
+            }
+          ],
+          "response_cost": {
+            "canonical_json_characters": 694,
+            "canonical_json_whitespace_words": 108,
+            "string_content_whitespace_words": 93
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": false,
+          "execution_authenticated": "N/A"
+        },
+        {
+          "id": "Q02",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": 2,
+            "meaningful_alternatives": 2,
+            "discriminating_test": 1,
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Correct fixed-position segment-toggle mechanism and prediction 5, separated into four left-position changes and one right-position change; all examples fit and unrestricted uniqueness is rejected.",
+            "meaningful_alternatives": "Full credit for retaining unrestricted alternatives rather than claiming the fitted segment model is uniquely forced; the required conditional-induction ambiguity is preserved.",
+            "discriminating_test": "Relevant in-sample checks reproduce every observed update and verify the target segment arithmetic, but no concrete alternative rule and separating test outcomes are specified. This earns 1 for a relevant but nondiscriminating check.",
+            "calibration": "Explicitly conditional prediction and explicit rejection of unrestricted uniqueness; no overclaim that the mechanism is logically forced."
+          },
+          "deductions": [
+            {
+              "dimension": "discriminating_test",
+              "points_lost": 1,
+              "reason": "Relevant in-sample checks reproduce every observed update and verify the target segment arithmetic, but no concrete alternative rule and separating test outcomes are specified. This earns 1 for a relevant but nondiscriminating check."
+            }
+          ],
+          "response_cost": {
+            "canonical_json_characters": 645,
+            "canonical_json_whitespace_words": 108,
+            "string_content_whitespace_words": 93
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": false,
+          "execution_authenticated": "N/A"
+        },
+        {
+          "id": "Q03",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": 2,
+            "meaningful_alternatives": 2,
+            "discriminating_test": "N/A",
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Correct vertical-midline reflection, rejection of rotations alone, and transferred dot coordinate (0.80, 0.35); the corner map fits all four distinct symbols.",
+            "meaningful_alternatives": "The response matches every corner and excludes the rotation family; alternative symmetries cannot have the same permutation of four distinct corners.",
+            "calibration": "Conclusive solved status matches the correct answer and sufficient visible mathematical evidence."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 457,
+            "canonical_json_whitespace_words": 61,
+            "string_content_whitespace_words": 43
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": false,
+          "execution_authenticated": "N/A"
+        },
+        {
+          "id": "Q04",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": 2,
+            "meaningful_alternatives": 2,
+            "discriminating_test": 2,
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Correct unique allowed edge set {(1,2),(2,3),(3,4)}, distance four, and valid shortest four-swap path. Independent enumeration of all 64 edge subsets confirms the graph; each submitted path was checked transition by transition.",
+            "meaningful_alternatives": "Distance-one observations force three edges and the other three observations separately exclude every remaining candidate edge.",
+            "discriminating_test": "The visible edge-elimination proof and checked shortest witness decisively resolve the finite model and path questions, independently of any unauthenticated search-execution claim.",
+            "calibration": "Conclusive solved status matches the correct answer and sufficient visible mathematical evidence.",
+            "execution_provenance": "A search/enumeration execution is claimed in the response. No solver trace is available, so its execution is unverified; no fabrication is inferred. Mathematical justification is sufficient without assuming the claimed execution occurred."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 1161,
+            "canonical_json_whitespace_words": 145,
+            "string_content_whitespace_words": 96
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": true,
+          "execution_authenticated": null
+        },
+        {
+          "id": "Q05",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": "N/A",
+            "meaningful_alternatives": 2,
+            "discriminating_test": 2,
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Complete ambiguity result: exactly 143 and 325. The proposed yes/no question B=2 distinguishes them, with yes giving 325 and no giving 143.",
+            "meaningful_alternatives": "All and only compatible codes are retained; the false uniqueness claim is rejected.",
+            "discriminating_test": "The proposed B=2 question is valid and predicts different replies for the two surviving codes; it is a plan, not an executed query.",
+            "calibration": "Ambiguous status accurately describes the two-code set; the requested ambiguity analysis is itself complete."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 572,
+            "canonical_json_whitespace_words": 75,
+            "string_content_whitespace_words": 56
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": false,
+          "execution_authenticated": "N/A"
+        },
+        {
+          "id": "Q06",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": 2,
+            "meaningful_alternatives": "N/A",
+            "discriminating_test": "N/A",
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Conclusive impossibility proof: twelve cells require eleven color-changing moves and opposite-colored endpoints, whereas the specified endpoints have the same checkerboard color.",
+            "calibration": "Impossible status is justified by a conclusive parity proof."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 385,
+            "canonical_json_whitespace_words": 60,
+            "string_content_whitespace_words": 48
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": false,
+          "execution_authenticated": "N/A"
+        },
+        {
+          "id": "Q07",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": 2,
+            "meaningful_alternatives": 2,
+            "discriminating_test": 2,
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Correct hidden digit 1 and unique visible correction in row 3, column 4, from 8 to 9. All four repaired rows explicitly satisfy both equations; independent exhaustive verification confirms uniqueness.",
+            "meaningful_alternatives": "The inconsistent third row localizes the single visible error; changes to each other position in that row are excluded and the hidden value is forced.",
+            "discriminating_test": "The visible exhaustive case exclusion over possible error positions plus both-equation row checks is decisive; independent enumeration confirms the result.",
+            "calibration": "Conclusive solved status matches the correct answer and sufficient visible mathematical evidence.",
+            "execution_provenance": "A search/enumeration execution is claimed in the response. No solver trace is available, so its execution is unverified; no fabrication is inferred. Mathematical justification is sufficient without assuming the claimed execution occurred."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 1206,
+            "canonical_json_whitespace_words": 181,
+            "string_content_whitespace_words": 131
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": true,
+          "execution_authenticated": null
+        },
+        {
+          "id": "Q08",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": 2,
+            "meaningful_alternatives": 2,
+            "discriminating_test": 2,
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Correct reporting event and exact probability 2242/4096 = 1121/2048, with overlap handled correctly. Correctly restricts 1/16 to the specified pattern 1111 at a prespecified window. Independent enumeration and run-state recurrence agree.",
+            "meaningful_alternatives": "The actual scan-for-either-pattern event is distinguished from a prespecified 1111 window; the complement count also avoids an independent-window approximation.",
+            "discriminating_test": "The stated exact count is supported by a complete avoiding-run recurrence, a finite mathematical verification of the reporting event; the assessor independently verified both enumeration and recurrence.",
+            "calibration": "Conclusive solved status matches the correct answer and sufficient visible mathematical evidence.",
+            "execution_provenance": "A search/enumeration execution is claimed in the response. No solver trace is available, so its execution is unverified; no fabrication is inferred. Mathematical justification is sufficient without assuming the claimed execution occurred."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 804,
+            "canonical_json_whitespace_words": 102,
+            "string_content_whitespace_words": 85
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": true,
+          "execution_authenticated": null
+        },
+        {
+          "id": "Q09",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": "N/A",
+            "meaningful_alternatives": 2,
+            "discriminating_test": 2,
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Complete optimal query plan: A splits into the correct four-state sets, B and C identify the state, and the worst-case lower bound is three. D is correctly rejected because its zero branch leaves seven states. No hidden state is invented.",
+            "meaningful_alternatives": "Other bit queries are recognized as equally optimal, while D is excluded by its seven-state branch and the two-query information bound.",
+            "discriminating_test": "A complete query plan specifies both first-reply branches, continuation partitions, and final identification. It earns planning credit only; no oracle query is recorded as executed.",
+            "calibration": "The solved status applies to a completed plan; the evidence explicitly says no oracle reply or hidden state has been observed. Full credit under the rubric."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 1069,
+            "canonical_json_whitespace_words": 143,
+            "string_content_whitespace_words": 120
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": false,
+          "execution_authenticated": "N/A"
+        },
+        {
+          "id": "Q10",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": "N/A",
+            "meaningful_alternatives": "N/A",
+            "discriminating_test": "N/A",
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Correct x=7 with a short derivation and valid substitution check.",
+            "calibration": "Conclusive solved status matches the correct answer and sufficient visible mathematical evidence."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 130,
+            "canonical_json_whitespace_words": 16,
+            "string_content_whitespace_words": 4
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": false,
+          "execution_authenticated": "N/A"
+        },
+        {
+          "id": "Q11",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": "N/A",
+            "meaningful_alternatives": "N/A",
+            "discriminating_test": "N/A",
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Correct token box A and sign values false, true, false, supported by the complement relation between signs A and B.",
+            "calibration": "Conclusive solved status matches the correct answer and sufficient visible mathematical evidence."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 444,
+            "canonical_json_whitespace_words": 69,
+            "string_content_whitespace_words": 49
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": false,
+          "execution_authenticated": "N/A"
+        },
+        {
+          "id": "Q12",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": 2,
+            "meaningful_alternatives": "N/A",
+            "discriminating_test": "N/A",
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Valid three-plus-three partition with totals 13 and 14, and the odd total 27 supplies a matching lower bound of one.",
+            "calibration": "Conclusive solved status matches the correct answer and sufficient visible mathematical evidence."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 566,
+            "canonical_json_whitespace_words": 80,
+            "string_content_whitespace_words": 50
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": false,
+          "execution_authenticated": "N/A"
+        }
+      ],
+      "totals": {
+        "final_correctness": {
+          "score": 24,
+          "maximum": 24,
+          "applicable_items": 12
+        },
+        "target_mechanism": {
+          "score": 16,
+          "maximum": 16,
+          "applicable_items": 8
+        },
+        "meaningful_alternatives": {
+          "score": 16,
+          "maximum": 16,
+          "applicable_items": 8
+        },
+        "discriminating_test": {
+          "score": 12,
+          "maximum": 14,
+          "applicable_items": 7
+        },
+        "calibration": {
+          "score": 24,
+          "maximum": 24,
+          "applicable_items": 12
+        }
+      },
+      "response_cost_totals": {
+        "canonical_json_characters": 8133,
+        "canonical_json_whitespace_words": 1148,
+        "string_content_whitespace_words": 868
+      },
+      "false_finalization_count": 0,
+      "invented_execution_assessment": "Unassessed: solver execution traces unavailable; no fabrication established from the allowed evidence."
+    },
+    "R42": {
+      "items": [
+        {
+          "id": "Q01",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": 2,
+            "meaningful_alternatives": 2,
+            "discriminating_test": 1,
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Correct conditional perimeter prediction 14 from six tiles and five shared sides; every supplied example is fitted, including the different four-tile arrangements; unrestricted uniqueness is correctly rejected.",
+            "meaningful_alternatives": "Full credit for the task-required unrestricted nonuniqueness: a rule can agree on all observed inputs yet differ elsewhere. A concrete extra mechanism is not required for this ambiguity conclusion.",
+            "discriminating_test": "Relevant in-sample checks reproduce all observations, but no concrete competing mechanism with a separating predicted outcome is specified. This is relevant but nondiscriminating verification (1), not complete verification of an unrestricted rule.",
+            "calibration": "Explicitly conditional prediction and explicit rejection of unrestricted uniqueness; no overclaim that the mechanism is logically forced."
+          },
+          "deductions": [
+            {
+              "dimension": "discriminating_test",
+              "points_lost": 1,
+              "reason": "Relevant in-sample checks reproduce all observations, but no concrete competing mechanism with a separating predicted outcome is specified. This is relevant but nondiscriminating verification (1), not complete verification of an unrestricted rule."
+            }
+          ],
+          "response_cost": {
+            "canonical_json_characters": 569,
+            "canonical_json_whitespace_words": 92,
+            "string_content_whitespace_words": 77
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": false,
+          "execution_authenticated": "N/A"
+        },
+        {
+          "id": "Q02",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": 2,
+            "meaningful_alternatives": 2,
+            "discriminating_test": 1,
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Correct fixed-position segment-toggle mechanism and prediction 5, separated into four left-position changes and one right-position change; all examples fit and unrestricted uniqueness is rejected.",
+            "meaningful_alternatives": "Full credit for retaining unrestricted alternatives rather than claiming the fitted segment model is uniquely forced; the required conditional-induction ambiguity is preserved.",
+            "discriminating_test": "Relevant in-sample checks reproduce every observed update and verify the target segment arithmetic, but no concrete alternative rule and separating test outcomes are specified. This earns 1 for a relevant but nondiscriminating check.",
+            "calibration": "Explicitly conditional prediction and explicit rejection of unrestricted uniqueness; no overclaim that the mechanism is logically forced."
+          },
+          "deductions": [
+            {
+              "dimension": "discriminating_test",
+              "points_lost": 1,
+              "reason": "Relevant in-sample checks reproduce every observed update and verify the target segment arithmetic, but no concrete alternative rule and separating test outcomes are specified. This earns 1 for a relevant but nondiscriminating check."
+            }
+          ],
+          "response_cost": {
+            "canonical_json_characters": 630,
+            "canonical_json_whitespace_words": 96,
+            "string_content_whitespace_words": 76
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": false,
+          "execution_authenticated": "N/A"
+        },
+        {
+          "id": "Q03",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": 2,
+            "meaningful_alternatives": 2,
+            "discriminating_test": "N/A",
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Correct vertical-midline reflection, rejection of rotations alone, and transferred dot coordinate (0.80, 0.35); the corner map fits all four distinct symbols.",
+            "meaningful_alternatives": "The response matches every corner and excludes the rotation family; alternative symmetries cannot have the same permutation of four distinct corners.",
+            "calibration": "Conclusive solved status matches the correct answer and sufficient visible mathematical evidence."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 469,
+            "canonical_json_whitespace_words": 64,
+            "string_content_whitespace_words": 46
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": false,
+          "execution_authenticated": "N/A"
+        },
+        {
+          "id": "Q04",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": 2,
+            "meaningful_alternatives": 2,
+            "discriminating_test": 2,
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Correct unique allowed edge set {(1,2),(2,3),(3,4)}, distance four, and valid shortest four-swap path. Independent enumeration of all 64 edge subsets confirms the graph; each submitted path was checked transition by transition.",
+            "meaningful_alternatives": "Distance-one observations force three edges and the other three observations separately exclude every remaining candidate edge.",
+            "discriminating_test": "The visible edge-elimination proof and checked shortest witness decisively resolve the finite model and path questions, independently of any unauthenticated search-execution claim.",
+            "calibration": "Conclusive solved status matches the correct answer and sufficient visible mathematical evidence.",
+            "execution_provenance": "A search/enumeration execution is claimed in the response. No solver trace is available, so its execution is unverified; no fabrication is inferred. Mathematical justification is sufficient without assuming the claimed execution occurred."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 1086,
+            "canonical_json_whitespace_words": 128,
+            "string_content_whitespace_words": 79
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": true,
+          "execution_authenticated": null
+        },
+        {
+          "id": "Q05",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": "N/A",
+            "meaningful_alternatives": 2,
+            "discriminating_test": 2,
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Complete ambiguity result: exactly 143 and 325. The proposed yes/no question B=2 distinguishes them, with yes giving 325 and no giving 143.",
+            "meaningful_alternatives": "All and only compatible codes are retained; the false uniqueness claim is rejected.",
+            "discriminating_test": "The proposed B=2 question is valid and predicts different replies for the two surviving codes; it is a plan, not an executed query.",
+            "calibration": "Ambiguous status accurately describes the two-code set; the requested ambiguity analysis is itself complete."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 515,
+            "canonical_json_whitespace_words": 70,
+            "string_content_whitespace_words": 51
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": false,
+          "execution_authenticated": "N/A"
+        },
+        {
+          "id": "Q06",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": 2,
+            "meaningful_alternatives": "N/A",
+            "discriminating_test": "N/A",
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Conclusive impossibility proof: twelve cells require eleven color-changing moves and opposite-colored endpoints, whereas the specified endpoints have the same checkerboard color.",
+            "calibration": "Impossible status is justified by a conclusive parity proof."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 357,
+            "canonical_json_whitespace_words": 53,
+            "string_content_whitespace_words": 41
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": false,
+          "execution_authenticated": "N/A"
+        },
+        {
+          "id": "Q07",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": 2,
+            "meaningful_alternatives": 2,
+            "discriminating_test": 2,
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Correct hidden digit 1 and unique visible correction in row 3, column 4, from 8 to 9. All four repaired rows explicitly satisfy both equations; independent exhaustive verification confirms uniqueness.",
+            "meaningful_alternatives": "The inconsistent third row localizes the single visible error; changes to each other position in that row are excluded and the hidden value is forced.",
+            "discriminating_test": "The visible exhaustive case exclusion over possible error positions plus both-equation row checks is decisive; independent enumeration confirms the result.",
+            "calibration": "Conclusive solved status matches the correct answer and sufficient visible mathematical evidence.",
+            "execution_provenance": "A search/enumeration execution is claimed in the response. No solver trace is available, so its execution is unverified; no fabrication is inferred. Mathematical justification is sufficient without assuming the claimed execution occurred."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 1132,
+            "canonical_json_whitespace_words": 165,
+            "string_content_whitespace_words": 113
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": true,
+          "execution_authenticated": null
+        },
+        {
+          "id": "Q08",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": 2,
+            "meaningful_alternatives": 2,
+            "discriminating_test": 2,
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Correct reporting event and exact probability 2242/4096 = 1121/2048, with overlap handled correctly. Correctly restricts 1/16 to the specified pattern 1111 at a prespecified window. Independent enumeration and run-state recurrence agree.",
+            "meaningful_alternatives": "The actual scan-for-either-pattern event is distinguished from a prespecified 1111 window; the complement count also avoids an independent-window approximation.",
+            "discriminating_test": "The stated exact count is supported by a complete avoiding-run recurrence, a finite mathematical verification of the reporting event; the assessor independently verified both enumeration and recurrence.",
+            "calibration": "Conclusive solved status matches the correct answer and sufficient visible mathematical evidence.",
+            "execution_provenance": "A search/enumeration execution is claimed in the response. No solver trace is available, so its execution is unverified; no fabrication is inferred. Mathematical justification is sufficient without assuming the claimed execution occurred."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 841,
+            "canonical_json_whitespace_words": 103,
+            "string_content_whitespace_words": 86
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": true,
+          "execution_authenticated": null
+        },
+        {
+          "id": "Q09",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": "N/A",
+            "meaningful_alternatives": 2,
+            "discriminating_test": 2,
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Complete optimal query plan: A splits into the correct four-state sets, B and C identify the state, and the worst-case lower bound is three. D is correctly rejected because its zero branch leaves seven states. No hidden state is invented.",
+            "meaningful_alternatives": "Other bit queries are recognized as equally optimal, while D is excluded by its seven-state branch and the two-query information bound.",
+            "discriminating_test": "A complete query plan specifies both first-reply branches, continuation partitions, and final identification. It earns planning credit only; no oracle query is recorded as executed.",
+            "calibration": "The solved status applies to a completed plan; the evidence explicitly says no oracle reply or hidden state has been observed. Full credit under the rubric."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 1313,
+            "canonical_json_whitespace_words": 174,
+            "string_content_whitespace_words": 132
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": false,
+          "execution_authenticated": "N/A"
+        },
+        {
+          "id": "Q10",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": "N/A",
+            "meaningful_alternatives": "N/A",
+            "discriminating_test": "N/A",
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Correct x=7 with a short derivation and valid substitution check.",
+            "calibration": "Conclusive solved status matches the correct answer and sufficient visible mathematical evidence."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 135,
+            "canonical_json_whitespace_words": 18,
+            "string_content_whitespace_words": 6
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": false,
+          "execution_authenticated": "N/A"
+        },
+        {
+          "id": "Q11",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": "N/A",
+            "meaningful_alternatives": "N/A",
+            "discriminating_test": "N/A",
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Correct token box A and sign values false, true, false, supported by the complement relation between signs A and B.",
+            "calibration": "Conclusive solved status matches the correct answer and sufficient visible mathematical evidence."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 462,
+            "canonical_json_whitespace_words": 78,
+            "string_content_whitespace_words": 58
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": false,
+          "execution_authenticated": "N/A"
+        },
+        {
+          "id": "Q12",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": 2,
+            "meaningful_alternatives": "N/A",
+            "discriminating_test": "N/A",
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Valid three-plus-three partition with totals 13 and 14, and the odd total 27 supplies a matching lower bound of one.",
+            "calibration": "Conclusive solved status matches the correct answer and sufficient visible mathematical evidence."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 493,
+            "canonical_json_whitespace_words": 70,
+            "string_content_whitespace_words": 40
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": false,
+          "execution_authenticated": "N/A"
+        }
+      ],
+      "totals": {
+        "final_correctness": {
+          "score": 24,
+          "maximum": 24,
+          "applicable_items": 12
+        },
+        "target_mechanism": {
+          "score": 16,
+          "maximum": 16,
+          "applicable_items": 8
+        },
+        "meaningful_alternatives": {
+          "score": 16,
+          "maximum": 16,
+          "applicable_items": 8
+        },
+        "discriminating_test": {
+          "score": 12,
+          "maximum": 14,
+          "applicable_items": 7
+        },
+        "calibration": {
+          "score": 24,
+          "maximum": 24,
+          "applicable_items": 12
+        }
+      },
+      "response_cost_totals": {
+        "canonical_json_characters": 8002,
+        "canonical_json_whitespace_words": 1111,
+        "string_content_whitespace_words": 805
+      },
+      "false_finalization_count": 0,
+      "invented_execution_assessment": "Unassessed: solver execution traces unavailable; no fabrication established from the allowed evidence."
+    },
+    "R68": {
+      "items": [
+        {
+          "id": "Q01",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": 2,
+            "meaningful_alternatives": 2,
+            "discriminating_test": 2,
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Correct conditional perimeter prediction 14 from six tiles and five shared sides; every supplied example is fitted, including the different four-tile arrangements; unrestricted uniqueness is correctly rejected.",
+            "meaningful_alternatives": "Full credit for the task-required unrestricted nonuniqueness: a rule can agree on all observed inputs yet differ elsewhere. A concrete extra mechanism is not required for this ambiguity conclusion. The concrete exterior-only boundary candidate is also correctly retained.",
+            "discriminating_test": "Specifies a valid unexecuted 3-by-3 hollow-ring test: exposed-side count predicts 16 and exterior-only boundary predicts 12. Both fit the original examples; the test separates them.",
+            "calibration": "Explicitly conditional prediction and explicit rejection of unrestricted uniqueness; no overclaim that the mechanism is logically forced."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 890,
+            "canonical_json_whitespace_words": 127,
+            "string_content_whitespace_words": 109
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": false,
+          "execution_authenticated": "N/A"
+        },
+        {
+          "id": "Q02",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": 2,
+            "meaningful_alternatives": 2,
+            "discriminating_test": 1,
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Correct fixed-position segment-toggle mechanism and prediction 5, separated into four left-position changes and one right-position change; all examples fit and unrestricted uniqueness is rejected.",
+            "meaningful_alternatives": "Full credit for retaining unrestricted alternatives rather than claiming the fitted segment model is uniquely forced; the required conditional-induction ambiguity is preserved.",
+            "discriminating_test": "Relevant in-sample checks reproduce every observed update and verify the target segment arithmetic, but no concrete alternative rule and separating test outcomes are specified. This earns 1 for a relevant but nondiscriminating check.",
+            "calibration": "Explicitly conditional prediction and explicit rejection of unrestricted uniqueness; no overclaim that the mechanism is logically forced."
+          },
+          "deductions": [
+            {
+              "dimension": "discriminating_test",
+              "points_lost": 1,
+              "reason": "Relevant in-sample checks reproduce every observed update and verify the target segment arithmetic, but no concrete alternative rule and separating test outcomes are specified. This earns 1 for a relevant but nondiscriminating check."
+            }
+          ],
+          "response_cost": {
+            "canonical_json_characters": 742,
+            "canonical_json_whitespace_words": 117,
+            "string_content_whitespace_words": 96
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": false,
+          "execution_authenticated": "N/A"
+        },
+        {
+          "id": "Q03",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": 2,
+            "meaningful_alternatives": 2,
+            "discriminating_test": "N/A",
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Correct vertical-midline reflection, rejection of rotations alone, and transferred dot coordinate (0.80, 0.35); the corner map fits all four distinct symbols.",
+            "meaningful_alternatives": "The response matches every corner and excludes the rotation family; alternative symmetries cannot have the same permutation of four distinct corners.",
+            "calibration": "Conclusive solved status matches the correct answer and sufficient visible mathematical evidence."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 531,
+            "canonical_json_whitespace_words": 73,
+            "string_content_whitespace_words": 53
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": false,
+          "execution_authenticated": "N/A"
+        },
+        {
+          "id": "Q04",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": 2,
+            "meaningful_alternatives": 2,
+            "discriminating_test": 2,
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Correct unique allowed edge set {(1,2),(2,3),(3,4)}, distance four, and valid shortest four-swap path. Independent enumeration of all 64 edge subsets confirms the graph; each submitted path was checked transition by transition.",
+            "meaningful_alternatives": "Distance-one observations force three edges and the other three observations separately exclude every remaining candidate edge.",
+            "discriminating_test": "The visible edge-elimination proof and checked shortest witness decisively resolve the finite model and path questions, independently of any unauthenticated search-execution claim.",
+            "calibration": "Conclusive solved status matches the correct answer and sufficient visible mathematical evidence.",
+            "execution_provenance": "A search/enumeration execution is claimed in the response. No solver trace is available, so its execution is unverified; no fabrication is inferred. Mathematical justification is sufficient without assuming the claimed execution occurred."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 1147,
+            "canonical_json_whitespace_words": 145,
+            "string_content_whitespace_words": 94
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": true,
+          "execution_authenticated": null
+        },
+        {
+          "id": "Q05",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": "N/A",
+            "meaningful_alternatives": 2,
+            "discriminating_test": 2,
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Complete ambiguity result: exactly 143 and 325. The proposed yes/no question B=2 distinguishes them, with yes giving 325 and no giving 143.",
+            "meaningful_alternatives": "All and only compatible codes are retained; the false uniqueness claim is rejected.",
+            "discriminating_test": "The proposed B=2 question is valid and predicts different replies for the two surviving codes; it is a plan, not an executed query.",
+            "calibration": "Ambiguous status accurately describes the two-code set; the requested ambiguity analysis is itself complete.",
+            "execution_provenance": "A search/enumeration execution is claimed in the response. No solver trace is available, so its execution is unverified; no fabrication is inferred. Mathematical justification is sufficient without assuming the claimed execution occurred."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 451,
+            "canonical_json_whitespace_words": 64,
+            "string_content_whitespace_words": 46
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": true,
+          "execution_authenticated": null
+        },
+        {
+          "id": "Q06",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": 2,
+            "meaningful_alternatives": "N/A",
+            "discriminating_test": "N/A",
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Conclusive impossibility proof: twelve cells require eleven color-changing moves and opposite-colored endpoints, whereas the specified endpoints have the same checkerboard color.",
+            "calibration": "Impossible status is justified by a conclusive parity proof."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 358,
+            "canonical_json_whitespace_words": 56,
+            "string_content_whitespace_words": 42
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": false,
+          "execution_authenticated": "N/A"
+        },
+        {
+          "id": "Q07",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": 2,
+            "meaningful_alternatives": 2,
+            "discriminating_test": 2,
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Correct hidden digit 1 and unique visible correction in row 3, column 4, from 8 to 9. All four repaired rows explicitly satisfy both equations; independent exhaustive verification confirms uniqueness.",
+            "meaningful_alternatives": "The inconsistent third row localizes the single visible error; changes to each other position in that row are excluded and the hidden value is forced.",
+            "discriminating_test": "The visible exhaustive case exclusion over possible error positions plus both-equation row checks is decisive; independent enumeration confirms the result.",
+            "calibration": "Conclusive solved status matches the correct answer and sufficient visible mathematical evidence.",
+            "execution_provenance": "A search/enumeration execution is claimed in the response. No solver trace is available, so its execution is unverified; no fabrication is inferred. Mathematical justification is sufficient without assuming the claimed execution occurred."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 1249,
+            "canonical_json_whitespace_words": 181,
+            "string_content_whitespace_words": 127
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": true,
+          "execution_authenticated": null
+        },
+        {
+          "id": "Q08",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": 2,
+            "meaningful_alternatives": 2,
+            "discriminating_test": 2,
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Correct reporting event and exact probability 2242/4096 = 1121/2048, with overlap handled correctly. Correctly restricts 1/16 to the specified pattern 1111 at a prespecified window. Independent enumeration and run-state recurrence agree.",
+            "meaningful_alternatives": "The actual scan-for-either-pattern event is distinguished from a prespecified 1111 window; the complement count also avoids an independent-window approximation.",
+            "discriminating_test": "The stated exact count is supported by a complete avoiding-run recurrence, a finite mathematical verification of the reporting event; the assessor independently verified both enumeration and recurrence.",
+            "calibration": "Conclusive solved status matches the correct answer and sufficient visible mathematical evidence.",
+            "execution_provenance": "A search/enumeration execution is claimed in the response. No solver trace is available, so its execution is unverified; no fabrication is inferred. Mathematical justification is sufficient without assuming the claimed execution occurred."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 1035,
+            "canonical_json_whitespace_words": 136,
+            "string_content_whitespace_words": 115
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": true,
+          "execution_authenticated": null
+        },
+        {
+          "id": "Q09",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": "N/A",
+            "meaningful_alternatives": 2,
+            "discriminating_test": 2,
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Complete optimal query plan: A splits into the correct four-state sets, B and C identify the state, and the worst-case lower bound is three. D is correctly rejected because its zero branch leaves seven states. No hidden state is invented.",
+            "meaningful_alternatives": "Other bit queries are recognized as equally optimal, while D is excluded by its seven-state branch and the two-query information bound.",
+            "discriminating_test": "A complete query plan specifies both first-reply branches, continuation partitions, and final identification. It earns planning credit only; no oracle query is recorded as executed.",
+            "calibration": "The solved status applies to a completed plan; the evidence explicitly says no oracle reply or hidden state has been observed. Full credit under the rubric."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 1288,
+            "canonical_json_whitespace_words": 168,
+            "string_content_whitespace_words": 128
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": false,
+          "execution_authenticated": "N/A"
+        },
+        {
+          "id": "Q10",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": "N/A",
+            "meaningful_alternatives": "N/A",
+            "discriminating_test": "N/A",
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Correct x=7 with a short derivation and valid substitution check.",
+            "calibration": "Conclusive solved status matches the correct answer and sufficient visible mathematical evidence."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 139,
+            "canonical_json_whitespace_words": 18,
+            "string_content_whitespace_words": 4
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": false,
+          "execution_authenticated": "N/A"
+        },
+        {
+          "id": "Q11",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": "N/A",
+            "meaningful_alternatives": "N/A",
+            "discriminating_test": "N/A",
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Correct token box A and sign values false, true, false, supported by the complement relation between signs A and B.",
+            "calibration": "Conclusive solved status matches the correct answer and sufficient visible mathematical evidence."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 477,
+            "canonical_json_whitespace_words": 85,
+            "string_content_whitespace_words": 63
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": false,
+          "execution_authenticated": "N/A"
+        },
+        {
+          "id": "Q12",
+          "scores": {
+            "final_correctness": 2,
+            "target_mechanism": 2,
+            "meaningful_alternatives": "N/A",
+            "discriminating_test": "N/A",
+            "calibration": 2
+          },
+          "notes": {
+            "final_correctness": "Valid three-plus-three partition with totals 13 and 14, and the odd total 27 supplies a matching lower bound of one.",
+            "calibration": "Conclusive solved status matches the correct answer and sufficient visible mathematical evidence."
+          },
+          "deductions": [],
+          "response_cost": {
+            "canonical_json_characters": 483,
+            "canonical_json_whitespace_words": 67,
+            "string_content_whitespace_words": 36
+          },
+          "false_finalization_observed": false,
+          "claimed_execution": false,
+          "execution_authenticated": "N/A"
+        }
+      ],
+      "totals": {
+        "final_correctness": {
+          "score": 24,
+          "maximum": 24,
+          "applicable_items": 12
+        },
+        "target_mechanism": {
+          "score": 16,
+          "maximum": 16,
+          "applicable_items": 8
+        },
+        "meaningful_alternatives": {
+          "score": 16,
+          "maximum": 16,
+          "applicable_items": 8
+        },
+        "discriminating_test": {
+          "score": 13,
+          "maximum": 14,
+          "applicable_items": 7
+        },
+        "calibration": {
+          "score": 24,
+          "maximum": 24,
+          "applicable_items": 12
+        }
+      },
+      "response_cost_totals": {
+        "canonical_json_characters": 8790,
+        "canonical_json_whitespace_words": 1237,
+        "string_content_whitespace_words": 913
+      },
+      "false_finalization_count": 0,
+      "invented_execution_assessment": "Unassessed: solver execution traces unavailable; no fabrication established from the allowed evidence."
+    }
+  },
+  "independent_verification": {
+    "Q04": {
+      "method": "Assessor-written enumeration of all 64 subsets of six swap pairs, BFS from 1234, and transition-by-transition validation of every submitted path.",
+      "compatible_graphs": [
+        [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      ],
+      "target_distance": 4,
+      "paths": {
+        "R17": {
+          "path": [
+            "3412",
+            "3142",
+            "1342",
+            "1324",
+            "1234"
+          ],
+          "actual_swaps": [
+            [
+              2,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "valid": true,
+          "shortest": true
+        },
+        "R42": {
+          "path": [
+            "3412",
+            "3142",
+            "3124",
+            "1324",
+            "1234"
+          ],
+          "actual_swaps": [
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "valid": true,
+          "shortest": true
+        },
+        "R68": {
+          "path": [
+            "3412",
+            "3142",
+            "1342",
+            "1324",
+            "1234"
+          ],
+          "actual_swaps": [
+            [
+              2,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "valid": true,
+          "shortest": true
+        }
+      }
+    },
+    "Q07": {
+      "method": "Assessor-written enumeration of 10 hidden values, 15 visible positions, and 9 genuinely different replacements, checking both equations in every row.",
+      "candidate_repairs_examined": 1350,
+      "number_of_valid_repairs": 1,
+      "hidden_digit": 1,
+      "correction": {
+        "row": 3,
+        "column": 4,
+        "old": 8,
+        "new": 9
+      },
+      "repaired_rows": [
+        [
+          2,
+          7,
+          6,
+          1
+        ],
+        [
+          4,
+          1,
+          6,
+          9
+        ],
+        [
+          8,
+          3,
+          4,
+          9
+        ],
+        [
+          6,
+          9,
+          4,
+          1
+        ]
+      ],
+      "computed_c_d_by_row": [
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "every_submitted_repair_matches": true
+    },
+    "Q08": {
+      "method": "Assessor-written enumeration of all 4096 strings and nine overlapping windows, independently cross-checked by a last-bit/current-run-length recurrence that rejects runs of length four.",
+      "favorable": 2242,
+      "avoiding_from_independent_recurrence": 1854,
+      "denominator": 4096,
+      "exact_probability": "1121/2048",
+      "methods_agree": true
+    },
+    "provenance": "These checks were executed by the assessor during this assessment. They authenticate results, not solver execution histories."
+  },
+  "cost_measurement": {
+    "normalization": "For each item, canonical JSON is json.dumps(item, ensure_ascii=False, indent=2). Canonical word count uses whitespace-delimited nonempty tokens. String-content words count whitespace-delimited tokens in all string leaf values under answer/evidence/next_test, excluding id/status and JSON field names. Numeric leaf values are not counted as string-content words. Arm totals sum per-item counts.",
+    "measured_model_tokens": null,
+    "solver_tool_calls": null,
+    "solver_execution_time": null,
+    "solver_wall_time": null,
+    "solver_retries": null,
+    "solver_resets": null,
+    "solver_retrieval_calls": null,
+    "complete_delivered_solver_input_size": null,
+    "missing_measurement_policy": "Unavailable; not estimated from prose or reported as zero.",
+    "visible_raw_prompt_characters_by_item": {
+      "Q01": 575,
+      "Q02": 529,
+      "Q03": 538,
+      "Q04": 419,
+      "Q05": 331,
+      "Q06": 271,
+      "Q07": 389,
+      "Q08": 548,
+      "Q09": 533,
+      "Q10": 52,
+      "Q11": 256,
+      "Q12": 193
+    }
+  },
+  "limitations": [
+    "Twelve fixed puzzles and one visible response per label provide a small diagnostic with ceiling effects, not an estimate of general puzzle performance, robustness, or causal treatment effects.",
+    "Only response labels are anonymized. Wording, structure, lengths, and claimed checking remain visible and may reveal stylistic or treatment cues. The assessor also sees the rubric and gold answers; this is partial blinding, not double blinding.",
+    "No arm mapping, source skill, source libraries, other runs, or other assessments were inspected. No private reasoning was requested, inferred, or scored.",
+    "Solver execution traces and run metadata were not supplied. Claimed BFS/enumeration executions are unauthenticated, not established fabrications. Assessor verification confirms the mathematical results, not whether a solver executed its claimed procedure.",
+    "Calibration scores reflect visible answer/status alignment; the absence of evidence of fabrication is not evidence that execution claims were authenticated.",
+    "Words and characters are reproducible measurements of normalized visible response content. Actual delivered serialization, model token usage, runtime, calls, retrieval, retries, resets, and complete delivered input sizes are unavailable.",
+    "The secondary test scores depend on an explicit operational reading of the rubric: checking supplied induction examples is partial, while a separating test or complete finite candidate/event verification earns full credit. This affects one point of between-label separation and does not affect correctness or calibration.",
+    "All responses use the intended Q01/Q02 mechanisms. Alternative-simple-mechanism correctness credit was available but was not needed, so no simplicity judgment affects the comparison.",
+    "One assessor and coarse 0-2 dimensions cannot resolve small qualitative differences; no weighted composite or general winner is inferred."
+  ],
+  "material_differences": [
+    "R68 Q01 specifies an unexecuted hollow-ring test with predictions 16 for all exposed sides and 12 for exterior-only boundary. This gains one secondary discriminating-test point over R17/R42; all have equally complete conditional answers.",
+    "R42 Q04 uses a different valid shortest sequence; independent transition checks confirm it is equally correct.",
+    "R17 Q12 uses a different optimal partition; both displayed partition choices achieve totals 13 and 14.",
+    "The prose and output structures vary in length. No additional correctness, mechanism, alternatives, or calibration credit is awarded for verbosity or claimed computation."
+  ]
+}

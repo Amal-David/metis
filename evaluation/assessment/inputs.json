@@ -1,0 +1,830 @@
+{
+  "tasks": [
+    {
+      "id": "Q01",
+      "prompt": "A square-tile scanner gives these readings. Tiles touch only along full sides. One tile: 4. Two tiles sharing a side: 6. Four tiles in a 2-by-2 block: 8. Four tiles in a straight row: 10. Four isolated tiles: 16. Propose a simple mechanism fitting the readings and predict, under that mechanism, the reading for tiles at integer cells (0,0), (1,0), (2,0), (0,1), (2,1), (0,2)? Explain how your method accounts for both four-tile examples, and state whether the observations establish a unique unrestricted rule. Coordinates identify occupied cells; all other cells are empty."
+    },
+    {
+      "id": "Q02",
+      "prompt": "A two-digit display uses seven-segment digits with segments named a=top, b=upper right, c=lower right, d=bottom, e=lower left, f=upper left, g=middle. Its digit sets are 0:abcdef, 1:bc, 2:abdeg, 3:abcdg, 4:bcfg, 5:acdfg, 6:acdefg, 7:abc, 8:abcdefg, 9:abcdfg. An update counter reports 11→77: 2, 12→21: 10, 88→88: 0, and 00→88: 2. Propose a simple mechanism fitting these readings. Under that mechanism, predict 23→59, explaining the two positions separately. State whether these observations establish a unique unrestricted rule."
+    },
+    {
+      "id": "Q03",
+      "prompt": "A square transparent card has four distinct symbols at corner positions. On its original front: triangle NW, circle NE, star SE, square SW. The observed card has circle NW, triangle NE, square SE, star SW. It was transformed by one of the eight symmetries of a square (rotations and reflections). Which symmetry maps the original front to the observation? Is any rotation alone sufficient? The original front also has a small dot at normalized coordinates (0.20,0.35), with x rightward and y downward. Give the dot's observed coordinates."
+    },
+    {
+      "id": "Q04",
+      "prompt": "A sorter has four numbered positions. A fixed unknown subset of the six position pairs is allowed; one action swaps the contents at an allowed pair. Its display is the minimum number of actions needed to reach 1234. Verified readings are 2134:1, 1324:1, 1243:1, 3214:3, 1432:3, 4231:5. Identify all allowed position pairs. Then give the display for 3412 and a shortest sequence of resulting arrangements ending at 1234."
+    },
+    {
+      "id": "Q05",
+      "prompt": "A note calls a three-digit code ABC 'uniquely determined'. Each digit is an integer from 1 through 6, A+B=5, B+C=7, and B is even. There are no other conditions. What can actually be concluded about the code? Give every compatible code and, if needed, one yes/no question about a digit that would resolve the remaining uncertainty."
+    },
+    {
+      "id": "Q06",
+      "prompt": "On a 3-row, 4-column rectangular grid, a path must visit every cell exactly once. Each move is one cell up, down, left, or right. It must start at (row 1,column 1) and finish at (row 3,column 3). Does such a path exist? Supply a path if yes, or a conclusive reason if no."
+    },
+    {
+      "id": "Q07",
+      "prompt": "Each row in a log has four decimal digits a b c d obeying c=(a+2b) mod 10 and d=(2a+b) mod 10. The transcription is: [2,7,6,1]; [4,?,6,9]; [8,3,4,8]; [6,9,4,1]. Exactly one visible digit in the entire transcription is wrong; '?' hides one digit. Recover the hidden digit and the unique correction, or report all alternatives if it is not unique. Check both equations for each repaired row."
+    },
+    {
+      "id": "Q08",
+      "prompt": "Twelve independent fair bits were generated. After examining all nine overlapping contiguous windows of length four, an analyst highlighted a window of 1111 and reported probability 1/16. The analyst would equally have highlighted 0000 anywhere, if present. For this actual reporting rule, what is the exact probability that at least one highlight is possible? Explain whether 1/16 assesses that reporting rule. An exact fraction or finite enumeration with numerator and denominator is acceptable; do not assume overlapping windows are independent."
+    },
+    {
+      "id": "Q09",
+      "prompt": "An oracle hides one of H0,H1,H2,H3,H4,H5,H6,H7. Their three-bit labels are their binary indices: H0=000 through H7=111. Query A returns the first bit; B the second; C the third. Query D returns 1 only for H0, otherwise 0. Each query costs one, and you have at most three. Choose your first query to minimize the worst-case number needed to identify the state. State what each possible reply would leave possible and give your continuation plan. You have not received a reply yet: report your query plan, not an invented hidden state."
+    },
+    {
+      "id": "Q10",
+      "prompt": "Solve 3x+7=28 for x. A concise answer is sufficient."
+    },
+    {
+      "id": "Q11",
+      "prompt": "Exactly one of three boxes A, B, C contains a token. Their signs say A: 'The token is in B.' B: 'The token is not in B.' C: 'The token is not in A.' Exactly one sign is true. Which box contains the token? Verify the three sign truth values for your answer."
+    },
+    {
+      "id": "Q12",
+      "prompt": "You must divide the six weights 2,3,4,5,6,7 into two groups of three. Minimize the absolute difference between the group totals. Give an optimal division and a reason no division can do better."
+    }
+  ],
+  "responses": {
+    "R17": [
+      {
+        "id": "Q01",
+        "answer": {
+          "mechanism": "Count exposed unit tile sides: P = 4N - 2E, where E is the number of shared sides.",
+          "predicted_reading": 14,
+          "unique_unrestricted_rule": false
+        },
+        "status": "conditional",
+        "evidence": "The examples have (N,E) = (1,0), (2,1), (4,4), (4,3), and (4,0), giving 4, 6, 8, 10, and 16. In particular, the 2-by-2 block shares four sides, whereas the four-tile row shares three. The requested six-cell shape has five shared sides, so P = 24 - 10 = 14. These observations support this simple perimeter rule but cannot determine an unrestricted rule: another rule can agree on every observed configuration and differ on this six-cell shape."
+      },
+      {
+        "id": "Q02",
+        "answer": {
+          "mechanism": "Sum the number of segments toggled at each fixed digit position, using the symmetric difference of the old and new segment sets.",
+          "predicted_reading": 5,
+          "unique_unrestricted_rule": false
+        },
+        "status": "conditional",
+        "evidence": "For 23 to 59, the left digit 2 to 5 turns b,e off and c,f on: four toggles. The right digit 3 to 9 turns f on: one toggle. Thus the prediction is 4+1=5. The examples give 11 to 77: 1+1=2; 12 to 21: 5+5=10; 88 to 88: 0; 00 to 88: 1+1=2. Finitely many examples do not establish a unique unrestricted rule; the value 5 is conditional on this mechanism."
+      },
+      {
+        "id": "Q03",
+        "answer": {
+          "symmetry": "Reflection across the vertical midline x=0.5.",
+          "rotation_alone_sufficient": false,
+          "observed_dot": [
+            0.8,
+            0.35
+          ]
+        },
+        "status": "solved",
+        "evidence": "The map (x,y) to (1-x,y) exchanges NW with NE and SW with SE, giving exactly the observed placement of all four distinct symbols. No rotation has this corner permutation. Applying the same map to (0.20,0.35) gives (0.80,0.35)."
+      },
+      {
+        "id": "Q04",
+        "answer": {
+          "allowed_pairs": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "display_for_3412": 4,
+          "shortest_sequence": [
+            "3412",
+            "3142",
+            "1342",
+            "1324",
+            "1234"
+          ],
+          "swaps_in_order": [
+            [
+              2,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        "status": "solved",
+        "evidence": "The three distance-one readings force pairs (1,2), (2,3), and (3,4). Pair (1,3) would make 3214 distance one, contradicting three; pair (2,4) similarly contradicts 1432:3; pair (1,4) contradicts 4231:5. These are all six possible pairs, so the allowed subset is unique. With adjacent swaps, distance equals inversion count: the six verified readings have inversion counts 1,1,1,3,3,5. Arrangement 3412 has four inversions, and each adjacent swap changes the count by one. The displayed four-swap sequence attains this lower bound. Exhaustive breadth-first searches over all 64 pair subsets confirmed this unique model and distance."
+      },
+      {
+        "id": "Q05",
+        "answer": {
+          "compatible_codes": [
+            "143",
+            "325"
+          ],
+          "unique": false,
+          "resolving_yes_no_question": "Is B equal to 2?",
+          "if_yes": "325",
+          "if_no": "143"
+        },
+        "status": "ambiguous",
+        "evidence": "A=5-B and C=7-B. Since B is even in 1 through 6, its candidates are 2,4,6. They give (A,B,C)=(3,2,5),(1,4,3),(-1,6,1). The last violates the allowed digit range. Thus exactly two codes remain, and the note claiming uniqueness is false.",
+        "next_test": "Ask whether B=2; either answer selects exactly one compatible code."
+      },
+      {
+        "id": "Q06",
+        "answer": {
+          "path_exists": false
+        },
+        "status": "impossible",
+        "evidence": "Color each cell by the parity of row+column. Every permitted move changes color. A path visiting all 12 cells exactly once uses 11 moves, so its endpoints must have opposite colors. Both (1,1) and (3,3) have even row+column and hence the same color. Therefore no such path exists."
+      },
+      {
+        "id": "Q07",
+        "answer": {
+          "hidden_digit": 1,
+          "unique_correction": {
+            "row": 3,
+            "column": 4,
+            "from": 8,
+            "to": 9
+          },
+          "repaired_rows": [
+            [
+              2,
+              7,
+              6,
+              1
+            ],
+            [
+              4,
+              1,
+              6,
+              9
+            ],
+            [
+              8,
+              3,
+              4,
+              9
+            ],
+            [
+              6,
+              9,
+              4,
+              1
+            ]
+          ]
+        },
+        "status": "solved",
+        "evidence": "The third row violates its d equation, so the single visible error must be there. The unchanged second row gives 8+b congruent to 9 modulo 10, forcing hidden b=1. In row three, changing a cannot make 2a+3 even modulo 10; changing b to satisfy d=8 forces b=2, which would yield c=2 rather than 4; changing c leaves the faulty d equation untouched. Therefore only d can be wrong, and d=(16+3) mod 10=9. Checks for all repaired rows: row 1 has c=(2+14) mod 10=6 and d=(4+7) mod 10=1; row 2 has c=(4+2) mod 10=6 and d=(8+1) mod 10=9; row 3 has c=(8+6) mod 10=4 and d=(16+3) mod 10=9; row 4 has c=(6+18) mod 10=4 and d=(12+9) mod 10=1. Exhaustive enumeration of all hidden digits and single visible-digit replacements found exactly this repair."
+      },
+      {
+        "id": "Q08",
+        "answer": {
+          "exact_probability": "1121/2048",
+          "favorable_sequences": 2242,
+          "total_sequences": 4096,
+          "one_sixteenth_assesses_actual_rule": false
+        },
+        "status": "solved",
+        "evidence": "Exhaustive enumeration of all 2^12=4096 bit strings, testing each of their nine windows for either 0000 or 1111, counts 2242 strings with at least one highlight. Equivalently, the number a_n avoiding any run of four identical bits satisfies a_1=2, a_2=4, a_3=8 and a_n=a_(n-1)+a_(n-2)+a_(n-3) for n>=4, giving a_12=1854. Thus the probability is (4096-1854)/4096=1121/2048. The value 1/16 applies to 1111 in one prespecified window. It omits both the scan across positions and the willingness to highlight 0000. This calculation does not assume overlapping windows are independent."
+      },
+      {
+        "id": "Q09",
+        "answer": {
+          "first_query": "A",
+          "possible_after_reply_0": [
+            "H0",
+            "H1",
+            "H2",
+            "H3"
+          ],
+          "possible_after_reply_1": [
+            "H4",
+            "H5",
+            "H6",
+            "H7"
+          ],
+          "continuation": "Query B next, then C. Identify H_(4a+2b+c) from the three replies a,b,c.",
+          "optimal_worst_case_queries": 3,
+          "equally_optimal_first_queries": [
+            "B",
+            "C"
+          ]
+        },
+        "status": "solved",
+        "evidence": "After A=0, B=0 leaves {H0,H1} and B=1 leaves {H2,H3}; after A=1, B=0 leaves {H4,H5} and B=1 leaves {H6,H7}. Query C separates each remaining pair, with 0 selecting its even-indexed state and 1 its odd-indexed state. Eight possibilities require at least three binary replies in the worst case because two binary queries have at most four leaves. This plan reaches the bound. Starting with D is unsuitable: D=1 identifies H0, but D=0 leaves seven states, more than the four states distinguishable by two remaining binary queries. No reply has been received, so no particular hidden state is asserted."
+      },
+      {
+        "id": "Q10",
+        "answer": {
+          "x": 7
+        },
+        "status": "solved",
+        "evidence": "x=(28-7)/3=7; substitution gives 3(7)+7=28."
+      },
+      {
+        "id": "Q11",
+        "answer": {
+          "token_box": "A",
+          "sign_truth_values": {
+            "A": false,
+            "B": true,
+            "C": false
+          }
+        },
+        "status": "solved",
+        "evidence": "Signs A and B are logical complements, so exactly one of them is always true. The condition that exactly one sign overall is true therefore forces sign C to be false, meaning the token is in A. For that placement, the signs read false, true, false, as required."
+      },
+      {
+        "id": "Q12",
+        "answer": {
+          "groups": [
+            [
+              2,
+              5,
+              6
+            ],
+            [
+              3,
+              4,
+              7
+            ]
+          ],
+          "group_totals": [
+            13,
+            14
+          ],
+          "minimum_absolute_difference": 1
+        },
+        "status": "solved",
+        "evidence": "The proposed groups each contain three weights and use all six exactly once, with totals 13 and 14. Their combined total is 27, so two integer group totals cannot be equal: their difference is an odd integer and at least one. The proposed division attains one and is therefore optimal."
+      }
+    ],
+    "R42": [
+      {
+        "id": "Q01",
+        "answer": {
+          "mechanism": "Count exposed unit tile edges: P = 4N - 2E, where E counts shared full sides.",
+          "predicted_reading": 14,
+          "unique_unrestricted_rule": false
+        },
+        "status": "conditional",
+        "evidence": "The target has N=6 tiles and E=5 shared sides, so P=24-10=14. For a 2-by-2 block, N=4 and E=4 give 8; for a four-tile row, E=3 gives 10. A single tile gives 4, a sharing pair gives 6, and four isolated tiles give 16. These finitely many observations do not exclude rules that agree on all examples but differ on the target."
+      },
+      {
+        "id": "Q02",
+        "answer": {
+          "mechanism": "Count individual segment toggles, adding the symmetric-difference sizes for the two fixed display positions.",
+          "predicted_reading": 5,
+          "position_counts": [
+            4,
+            1
+          ],
+          "unique_unrestricted_rule": false
+        },
+        "status": "conditional",
+        "evidence": "For 23 to 59, left position 2 to 5 switches b,e off and c,f on: 4 toggles. Right position 3 to 9 switches f on: 1 toggle. Total 5. The examples give 11 to 77: 1+1=2; 12 to 21: 5+5=10; 88 to 88: 0; and 00 to 88: 1+1=2. Other unrestricted rules can fit these observations and differ on an unobserved update."
+      },
+      {
+        "id": "Q03",
+        "answer": {
+          "symmetry": "Reflection across the vertical centerline x=0.5 (left-right reflection).",
+          "rotation_alone_sufficient": false,
+          "observed_dot": [
+            0.8,
+            0.35
+          ]
+        },
+        "status": "solved",
+        "evidence": "The corner mapping is NW to NE, NE to NW, SE to SW, and SW to SE, exactly matching all four distinct symbols. No rotation has this corner permutation. The reflection acts by (x,y) to (1-x,y), giving (0.80,0.35)."
+      },
+      {
+        "id": "Q04",
+        "answer": {
+          "allowed_position_pairs": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "display_for_3412": 4,
+          "shortest_sequence": [
+            "3412",
+            "3142",
+            "3124",
+            "1324",
+            "1234"
+          ],
+          "swapped_position_pairs": [
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        "status": "solved",
+        "evidence": "The three distance-one readings require pairs (1,2), (2,3), and (3,4). Arrangements 3214, 1432, and 4231 are respectively single transpositions at (1,3), (2,4), and (1,4); their distances greater than one exclude all three remaining pairs. Adjacent-swap distances equal inversion counts, reproducing 3,3,5 for those readings. Arrangement 3412 has four inversions, so at least four adjacent swaps are required; the displayed sequence achieves four. Breadth-first search over all 24 permutations independently verifies the readings and path."
+      },
+      {
+        "id": "Q05",
+        "answer": {
+          "compatible_codes": [
+            "143",
+            "325"
+          ],
+          "uniquely_determined": false,
+          "resolving_yes_no_question": "Is B equal to 2?",
+          "yes_answer_code": "325",
+          "no_answer_code": "143"
+        },
+        "status": "ambiguous",
+        "evidence": "A=5-B and C=7-B. Since B is even and A must be at least 1, B can only be 2 or 4. These give 325 and 143 respectively; both obey every condition.",
+        "next_test": "Ask whether B=2; the two answers distinguish the two compatible codes."
+      },
+      {
+        "id": "Q06",
+        "answer": {
+          "path_exists": false
+        },
+        "status": "impossible",
+        "evidence": "Color each cell by the parity of row+column. Every allowed move switches color. A path through all 12 cells has 11 moves, so its endpoints must have opposite colors. Both (1,1) and (3,3) have even row+column, contradicting the required endpoint colors."
+      },
+      {
+        "id": "Q07",
+        "answer": {
+          "hidden_digit": 1,
+          "correction": {
+            "row": 3,
+            "column": 4,
+            "from": 8,
+            "to": 9
+          },
+          "repaired_rows": [
+            [
+              2,
+              7,
+              6,
+              1
+            ],
+            [
+              4,
+              1,
+              6,
+              9
+            ],
+            [
+              8,
+              3,
+              4,
+              9
+            ],
+            [
+              6,
+              9,
+              4,
+              1
+            ]
+          ],
+          "unique": true
+        },
+        "status": "solved",
+        "evidence": "Both equations check as follows: row 1 gives (2+14,4+7) mod 10=(6,1); row 2 gives (4+2,8+1)=(6,9); row 3 gives (8+6,16+3) mod 10=(4,9); row 4 gives (6+18,12+9) mod 10=(4,1). Row 3 is inconsistent as written, so it must contain the single visible error. In that row, changing a alone is excluded because the c equation already forces a=8; changing b would require b in {3,8} from c but b=2 from d; changing c leaves the d equation wrong. Thus only d can change, to 9. Row 2 must then satisfy both equations unchanged, forcing b=1. Exhaustive enumeration of all 100 possible (a,b) pairs for each row yields exactly this one repair with one visible error."
+      },
+      {
+        "id": "Q08",
+        "answer": {
+          "highlight_possible_probability": "1121/2048",
+          "favorable_strings": 2242,
+          "total_strings": 4096,
+          "one_sixteenth_assesses_actual_reporting_rule": false
+        },
+        "status": "solved",
+        "evidence": "Enumerating all 2^12=4096 bit strings and counting those containing 0000 or 1111 gives 2242, hence 2242/4096=1121/2048. As a counting check, a string avoiding both patterns has runs of lengths 1,2,3. There are 927 compositions of 12 into these lengths, from T0=1,T1=1,T2=2 and Tn=T(n-1)+T(n-2)+T(n-3) for n>=3. Choosing the initial bit gives 2*927=1854 avoiding strings, leaving 2242. Probability 1/16 applies to 1111 at one prespecified window. The actual reporting rule searches all nine overlapping windows and allows either constant pattern; overlapping windows were not treated as independent."
+      },
+      {
+        "id": "Q09",
+        "answer": {
+          "first_query": "A",
+          "first_reply_candidates": {
+            "0": [
+              "H0",
+              "H1",
+              "H2",
+              "H3"
+            ],
+            "1": [
+              "H4",
+              "H5",
+              "H6",
+              "H7"
+            ]
+          },
+          "continuation": "Query B next and C last; identify the state whose binary label is the three replies ABC.",
+          "after_A_and_B": {
+            "00": [
+              "H0",
+              "H1"
+            ],
+            "01": [
+              "H2",
+              "H3"
+            ],
+            "10": [
+              "H4",
+              "H5"
+            ],
+            "11": [
+              "H6",
+              "H7"
+            ]
+          },
+          "final_C_reply": "C=0 selects the even-indexed member of the remaining pair; C=1 selects the odd-indexed member.",
+          "optimal_worst_case_queries": 3,
+          "other_optimal_first_queries": [
+            "B",
+            "C"
+          ]
+        },
+        "status": "solved",
+        "evidence": "A binary decision tree of depth k has at most 2^k leaves, so identifying eight states requires at least three queries in the worst case. Querying the three label bits achieves that bound. Starting with D would leave only H0 if its reply were 1, but seven states H1 through H7 if its reply were 0; two further binary queries can distinguish at most four states, so D cannot guarantee identification within the budget. No oracle reply or hidden state is assumed."
+      },
+      {
+        "id": "Q10",
+        "answer": {
+          "x": 7
+        },
+        "status": "solved",
+        "evidence": "3x=28-7=21, so x=7; substitution gives 3*7+7=28."
+      },
+      {
+        "id": "Q11",
+        "answer": {
+          "token_box": "A",
+          "sign_truth_values": {
+            "A": false,
+            "B": true,
+            "C": false
+          }
+        },
+        "status": "solved",
+        "evidence": "The A and B signs are logical opposites, so exactly one of them is always true. To have exactly one true sign overall, the C sign must be false, which means the token is in A. Then the statements that the token is in B, not in B, and not in A are respectively false, true, false."
+      },
+      {
+        "id": "Q12",
+        "answer": {
+          "groups": [
+            [
+              2,
+              4,
+              7
+            ],
+            [
+              3,
+              5,
+              6
+            ]
+          ],
+          "totals": [
+            13,
+            14
+          ],
+          "minimum_absolute_difference": 1
+        },
+        "status": "solved",
+        "evidence": "All six weights sum to 27. Integer group totals with an odd sum cannot be equal, so their absolute difference is at least 1. These two groups each contain three weights and achieve totals 13 and 14, meeting that bound."
+      }
+    ],
+    "R68": [
+      {
+        "id": "Q01",
+        "answer": {
+          "mechanism": "Count exposed unit sides: P=4N-2E, where E is the number of shared tile sides.",
+          "prediction": 14,
+          "unique_unrestricted_rule": false
+        },
+        "status": "conditional",
+        "evidence": [
+          "A single tile has P=4; a touching pair has P=8-2=6.",
+          "A 2-by-2 block has four shared sides, so P=16-8=8. A four-tile row has three shared sides, so P=16-6=10. Four isolated tiles have P=16.",
+          "The requested six cells have five shared sides: two horizontal and three vertical. Therefore P=24-10=14.",
+          "These finitely many readings fit the perimeter rule but cannot establish a unique unrestricted rule."
+        ],
+        "next_test": "A proposed, unexecuted test is a 3-by-3 ring with its center empty: counting all exposed sides predicts 16, whereas counting only the exterior boundary predicts 12. Both mechanisms fit the supplied examples."
+      },
+      {
+        "id": "Q02",
+        "answer": {
+          "mechanism": "Sum the numbers of segment on/off changes at the two fixed digit positions, using symmetric differences of their segment sets.",
+          "prediction": 5,
+          "left_position_changes": 4,
+          "right_position_changes": 1,
+          "unique_unrestricted_rule": false
+        },
+        "status": "conditional",
+        "evidence": [
+          "11 to 77 adds a in each position: 1+1=2. For 12 to 21, each position changes five segments: 5+5=10. 88 to 88 changes none. 00 to 88 adds g at each position: 1+1=2.",
+          "For 2 to 5, b and e turn off while c and f turn on: four changes. For 3 to 9, only f turns on: one change. Hence 23 to 59 gives 4+1=5.",
+          "Finite examples do not establish a unique unrestricted update rule."
+        ]
+      },
+      {
+        "id": "Q03",
+        "answer": {
+          "symmetry": "Reflection across the vertical midline x=0.5.",
+          "rotation_alone_sufficient": false,
+          "dot_coordinates": [
+            0.8,
+            0.35
+          ]
+        },
+        "status": "solved",
+        "evidence": [
+          "The map (x,y) to (1-x,y) exchanges NW with NE and SW with SE, matching all four distinct symbols.",
+          "A rotation moving the original NW triangle to NE would move the original NE circle to SE, contradicting its observed NW position.",
+          "The dot maps from (0.20,0.35) to (0.80,0.35)."
+        ]
+      },
+      {
+        "id": "Q04",
+        "answer": {
+          "allowed_position_pairs": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "display_for_3412": 4,
+          "shortest_sequence": [
+            "3412",
+            "3142",
+            "1342",
+            "1324",
+            "1234"
+          ],
+          "swaps_in_order": [
+            [
+              2,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        "status": "solved",
+        "evidence": [
+          "The three distance-one readings force pairs (1,2), (2,3), and (3,4) to be allowed. The readings for 3214, 1432, and 4231 exclude pairs (1,3), (2,4), and (1,4), respectively: each would otherwise have distance one. These exhaust all six pairs.",
+          "With adjacent swaps, each action changes the inversion count by exactly one. Arrangement 3412 has four inversions, so at least four actions are needed. The supplied four-swap sequence attains the bound.",
+          "A completed breadth-first search over all 24 arrangements verified distances 1,1,1,3,3,5 for the six observations and distance 4 for 3412."
+        ]
+      },
+      {
+        "id": "Q05",
+        "answer": {
+          "compatible_codes": [
+            "143",
+            "325"
+          ],
+          "uniquely_determined": false
+        },
+        "status": "ambiguous",
+        "evidence": [
+          "Writing A=5-B and C=7-B, the allowed even values B=2 and B=4 give 325 and 143. B=6 would give A=-1 and is excluded.",
+          "A complete enumeration of the 216 digit triples confirmed precisely these two codes."
+        ],
+        "next_test": "Ask: Is B=2? Yes selects 325; no selects 143."
+      },
+      {
+        "id": "Q06",
+        "answer": {
+          "path_exists": false
+        },
+        "status": "impossible",
+        "evidence": [
+          "Color cell (r,c) by the parity of r+c. Every permitted move changes color.",
+          "A path visiting all 12 cells exactly once has 11 moves, so its endpoints must have opposite colors. Both (1,1) and (3,3) have even r+c, which is a contradiction."
+        ]
+      },
+      {
+        "id": "Q07",
+        "answer": {
+          "hidden_digit": 1,
+          "correction": {
+            "row": 3,
+            "column": 4,
+            "old_digit": 8,
+            "new_digit": 9
+          },
+          "repaired_rows": [
+            [
+              2,
+              7,
+              6,
+              1
+            ],
+            [
+              4,
+              1,
+              6,
+              9
+            ],
+            [
+              8,
+              3,
+              4,
+              9
+            ],
+            [
+              6,
+              9,
+              4,
+              1
+            ]
+          ],
+          "unique": true
+        },
+        "status": "solved",
+        "evidence": [
+          "Row 1: (2+2*7) mod 10=6 and (2*2+7) mod 10=1.",
+          "Row 2: (4+2*1) mod 10=6 and (2*4+1) mod 10=9.",
+          "Row 3: (8+2*3) mod 10=4 and (2*8+3) mod 10=9.",
+          "Row 4: (6+2*9) mod 10=4 and (2*6+9) mod 10=1.",
+          "Row 3 necessarily contains the visible error because its displayed digits already violate the second equation. Thus row 2 has no visible correction, forcing its hidden digit to 1. In row 3, changing a alone cannot preserve c=4 with b=3 unless a remains 8. Changing b alone would require b=3 or 8 from c, but b=2 from d. Changing c alone cannot fix d. Therefore only d changes, to 9.",
+          "Complete enumeration of 10 hidden values, 15 visible positions, and 9 replacement digits per position (1,350 repairs) returned this one solution."
+        ]
+      },
+      {
+        "id": "Q08",
+        "answer": {
+          "qualifying_strings": 2242,
+          "total_equally_likely_strings": 4096,
+          "exact_probability": "1121/2048",
+          "decimal_probability": 0.54736328125,
+          "one_sixteenth_assesses_reporting_rule": false
+        },
+        "status": "solved",
+        "evidence": [
+          "The actual event is that a length-12 string contains either 0000 or 1111 in at least one of its nine overlapping length-four windows.",
+          "Complete enumeration of all 2^12=4096 strings, testing all nine windows in each, found 2242 with a highlight and 1854 without one. This automatically accounts for overlap.",
+          "As an independent count, a string avoiding both runs is specified by its first bit and a composition of 12 into run lengths 1,2,3. With T(0)=1 and T(n)=T(n-1)+T(n-2)+T(n-3), using T(n)=0 for negative n, T(12)=927. Thus 2*927=1854 strings avoid highlights.",
+          "The value 1/16 is the probability of 1111 in one fixed window. The reporting rule allows either constant pattern and chooses among nine windows after inspection."
+        ]
+      },
+      {
+        "id": "Q09",
+        "answer": {
+          "first_query": "A",
+          "reply_0_leaves": [
+            "H0",
+            "H1",
+            "H2",
+            "H3"
+          ],
+          "reply_1_leaves": [
+            "H4",
+            "H5",
+            "H6",
+            "H7"
+          ],
+          "continuation": "Ask B second, then C third. If the replies are a,b,c, identify H(4a+2b+c).",
+          "second_query_partitions": {
+            "A=0,B=0": [
+              "H0",
+              "H1"
+            ],
+            "A=0,B=1": [
+              "H2",
+              "H3"
+            ],
+            "A=1,B=0": [
+              "H4",
+              "H5"
+            ],
+            "A=1,B=1": [
+              "H6",
+              "H7"
+            ]
+          },
+          "optimal_worst_case_queries": 3,
+          "other_optimal_first_queries": [
+            "B",
+            "C"
+          ]
+        },
+        "status": "solved",
+        "evidence": [
+          "A binary decision tree of depth two has at most four leaves, so eight possible states require at least three queries in the worst case. A, B, C attain this lower bound.",
+          "After any second-query pair, C=0 selects the even-indexed state and C=1 the odd-indexed state.",
+          "D first would leave H0 alone after reply 1, but seven states after reply 0. The remaining two binary queries can distinguish at most four states, so D cannot meet the three-query worst-case budget.",
+          "This is a query plan; no reply has been observed and no hidden state is asserted."
+        ]
+      },
+      {
+        "id": "Q10",
+        "answer": {
+          "x": 7
+        },
+        "status": "solved",
+        "evidence": [
+          "x=(28-7)/3=7; substitution gives 3*7+7=28."
+        ]
+      },
+      {
+        "id": "Q11",
+        "answer": {
+          "token_box": "A",
+          "sign_truth_values": {
+            "A": false,
+            "B": true,
+            "C": false
+          }
+        },
+        "status": "solved",
+        "evidence": [
+          "Signs A and B are logical negations, so exactly one of them is always true. To have exactly one true sign overall, sign C must be false, requiring the token to be in A.",
+          "For a token in A: the token is in B is false; the token is not in B is true; the token is not in A is false."
+        ]
+      },
+      {
+        "id": "Q12",
+        "answer": {
+          "group_1": [
+            2,
+            4,
+            7
+          ],
+          "group_2": [
+            3,
+            5,
+            6
+          ],
+          "totals": [
+            13,
+            14
+          ],
+          "minimum_absolute_difference": 1
+        },
+        "status": "solved",
+        "evidence": [
+          "The six weights total 27. Two integer group sums totaling an odd number cannot be equal, so their absolute difference is at least 1.",
+          "The proposed three-element groups total 13 and 14, attaining that lower bound."
+        ]
+      }
+    ]
+  }
+}

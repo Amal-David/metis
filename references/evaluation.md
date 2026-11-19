@@ -1,6 +1,6 @@
-# Evaluation plan (proposed, not yet run)
+# Evaluation protocol and observed evidence
 
-The six tiny probes described in the initial Metis design conversation were passed by both a skill-guided agent and an ordinary prompt. They do not establish advantage. Source-card retrieval and basic repository tests exercise plumbing, not creativity.
+The original six tiny probes were passed by both a skill-guided agent and an ordinary prompt. A follow-up audit on 2026-11-19 ran twelve tasks in three fresh arms: baseline, core only, and full package. All three answered every task correctly. A separate three-scenario comparison also tied. One full-package response proposed a more explicit rival-separating test; retrieval introduced no new solution mechanism. These diagnostic/development checks do not establish a general advantage. See the [audit report and complete trial artifacts](https://github.com/Amal-David/metis/blob/main/docs/audit-2026-11-19.md). The protocol below is guidance for stronger future comparisons; the current run limitations are documented in that report.
 
 ## Compare three arms
 

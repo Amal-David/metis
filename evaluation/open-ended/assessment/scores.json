@@ -1,0 +1,61 @@
+{
+  "assessment_basis": "Visible responses scored independently against the frozen 0–2 rubric. No arm identity, other runs, skill, source documents, web, or oracle were consulted.",
+  "limitations": "These are developer-authored scenario checks, not an independently sampled benchmark or proof of general creativity, superiority, or causal benefit. No unique final solution is supplied and no proposed physical or symbolic experiment was executed in these responses.",
+  "dimensions": ["grounding", "mechanisms", "next_action", "calibration"],
+  "scores": {
+    "S24": {
+      "E01": {
+        "grounding": {"score": 2, "evidence": "Uses transparency, opposite-edge registration, corner dots, asymmetric strokes, and the title to license distinct tests; does not require coincident dots or infer an observed message."},
+        "mechanisms": {"score": 2, "evidence": "Develops adjoining seam continuity and registered overlays, with reflection/rotation and union/shared/nonshared comparisons serving materially different roles."},
+        "next_action": {"score": 2, "evidence": "Label copies and faces, match all registration marks under compatible rigid placements, record dot and stroke changes, and compare full-pattern consistency under a fixed rule."},
+        "calibration": {"score": 2, "evidence": "Explicitly says no overlay was inspected; treats title-based difference and apparent characters as hypotheses requiring broad consistency."},
+        "total": 8
+      },
+      "E02": {
+        "grounding": {"score": 2, "evidence": "Recognizes the eight three-line forms as a promising trigram family while leaving the pair, compass, arrow, and line-order roles unresolved."},
+        "mechanisms": {"score": 2, "evidence": "Develops pairs as upper/lower hexagram components and pairs as connections between directional positions, with distinct checks for each."},
+        "next_action": {"score": 2, "evidence": "Specifies a structure-preserving transcription, a targeted reference check, fixed stacking conventions, and reproducible arrow-linked transformations or endpoint continuity."},
+        "calibration": {"score": 2, "evidence": "States that no lookup occurred and actual pair identities are missing; rejects automatic number-to-letter extraction and claims recognition rather than decoding."},
+        "total": 8
+      },
+      "E03": {
+        "grounding": {"score": 2, "evidence": "Returns to the unexplained blank, altered states, and coordinates; separates observed conditions from object labels and acknowledges synonym-driven fitting."},
+        "mechanisms": {"score": 2, "evidence": "Develops vacancy-based movement, state-based operations/rebuses, and selection by spatial arrangement, each with a distinct evidential requirement."},
+        "next_action": {"score": 2, "evidence": "Requests a coordinate-and-state inventory, then uses adjacency/directions, repeatable operations, or row/column structure to choose a bounded investigation."},
+        "calibration": {"score": 2, "evidence": "Treats the word as a weak fitted candidate, identifies the missing image/state data, and correctly denies that previously seen labels constitute a blind holdout."},
+        "total": 8
+      }
+    },
+    "S79": {
+      "E01": {
+        "grounding": {"score": 2, "evidence": "Uses registration geometry, dot positions, asymmetric strokes, and transparency as constraints without assuming the dots must coincide."},
+        "mechanisms": {"score": 2, "evidence": "Distinguishes in-plane rotation, turnover, and translation, then separates union, shared, and nonshared stroke views."},
+        "next_action": {"score": 2, "evidence": "Gives a feasible rigid-placement sequence with order/spacing checks and full-pattern inspection; explains why colored tracings are needed beyond an ordinary black overlay."},
+        "calibration": {"score": 2, "evidence": "Preserves ambiguity from symmetric marks, states that no alignment was performed, and does not predict resulting characters."},
+        "total": 8
+      },
+      "E02": {
+        "grounding": {"score": 2, "evidence": "Uses the eight variants to motivate trigrams and the compass to motivate, but not establish, traditional directional assignments."},
+        "mechanisms": {"score": 2, "evidence": "Develops hexagram stacking and directional endpoints/bearings, plus arrow-linked endpoint continuity or line-change relations."},
+        "next_action": {"score": 2, "evidence": "Specifies transcription conventions and concrete comparisons of linked pairs, including shared endpoints and consistently changed lines, before selecting a decoding route."},
+        "calibration": {"score": 2, "evidence": "Explicitly notes that all 64 pair combinations form valid hexagrams and therefore validity alone confirms nothing; distinguishes remembered mappings from intended use and admits missing page evidence."},
+        "total": 8
+      },
+      "E03": {
+        "grounding": {"score": 2, "evidence": "Uses the blank, unusual states, ordinary objects, and grid relationships; does not treat a sideways object as an established direction."},
+        "mechanisms": {"score": 2, "evidence": "Develops unusual-cell selection, vacancy-driven movement, and row/column relationships with a missing-member prediction."},
+        "next_action": {"score": 2, "evidence": "Requests coordinates and literal states, then prioritizes abnormal-cell counts, blank neighbors, and reusable move or relationship rules as cheap discriminating checks."},
+        "calibration": {"score": 2, "evidence": "Characterizes the word as a fitted candidate, acknowledges no image/oracle access, and correctly calls a new prediction using seen labels a consistency test rather than unseen evidence."},
+        "total": 8
+      }
+    }
+  },
+  "comparisons": {
+    "E01": {"outcome": "tie", "S24_total": 8, "S79_total": 8, "difference": "S24 explicitly includes seam continuity in the adjoining placement. S79 more explicitly explains why a plain black overlay cannot isolate shared strokes. Both meet every rubric dimension."},
+    "E02": {"outcome": "tie", "S24_total": 8, "S79_total": 8, "difference": "S24 makes the targeted reference need explicit. S79 explicitly excludes hexagram validity as confirming evidence and gives a layout-independent endpoint-equality check. These are useful emphases, not a score-separating advantage."},
+    "E03": {"outcome": "tie", "S24_total": 8, "S79_total": 8, "difference": "S24 develops state-based rebuses; S79 develops row/column relationships and missing-member prediction. Both supply grounded alternatives and precise source-dependent tests; neither executes them."}
+  },
+  "totals": {"S24": 24, "S79": 24, "maximum_per_response_set": 24},
+  "outcome": {"ties": 3, "S24_wins": 0, "S79_wins": 0, "S24_losses": 0, "S79_losses": 0},
+  "validity_review": "No material physical or logical error found. Bringing opposite edges together by translation gives an adjoining placement; a left-right turnover preserves vertical mark order and an in-plane half-turn reverses it. The stated Later Heaven directions are internally consistent with the conventional mapping. Hexagram construction alone is non-discriminating. Sliding legality and state meanings remain hypotheses, and seen labels are correctly not treated as fresh holdout evidence. The coarse rubric has a ceiling here and does not establish equivalence in every aspect of response quality."
+}

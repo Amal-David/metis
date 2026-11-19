@@ -1,0 +1,162 @@
+{
+  "Q01": {
+    "proposed_mechanism": "total exposed unit side length",
+    "conditional_answer": 14,
+    "shared_sides": 5,
+    "unrestricted_rule_unique": false
+  },
+  "Q02": {
+    "proposed_mechanism": "Hamming distance of fixed-position segment states",
+    "conditional_answer": 5,
+    "per_position": [
+      4,
+      1
+    ],
+    "unrestricted_rule_unique": false
+  },
+  "Q03": {
+    "symmetry": "reflection across vertical midline",
+    "dot": [
+      0.8,
+      0.35
+    ],
+    "rotation_suffices": false
+  },
+  "Q04": {
+    "compatible_graphs": [
+      {
+        "edges": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "target_distance": 4
+      }
+    ],
+    "shortest_witness": [
+      "3412",
+      "3142",
+      "1342",
+      "1324",
+      "1234"
+    ]
+  },
+  "Q05": {
+    "codes": [
+      "143",
+      "325"
+    ],
+    "unique": false
+  },
+  "Q06": {
+    "exists": false,
+    "enumerated_paths": 0,
+    "proof": "12 cells require opposite-color endpoints; specified endpoints have the same checkerboard color."
+  },
+  "Q07": {
+    "repairs": [
+      [
+        [
+          2,
+          7,
+          6,
+          1
+        ],
+        [
+          4,
+          1,
+          6,
+          9
+        ],
+        [
+          8,
+          3,
+          4,
+          9
+        ],
+        [
+          6,
+          9,
+          4,
+          1
+        ]
+      ]
+    ]
+  },
+  "Q08": {
+    "favorable": 2242,
+    "total": 4096,
+    "probability": "1121/2048"
+  },
+  "Q09": {
+    "optimal_first": [
+      "A",
+      "B",
+      "C"
+    ],
+    "worst_case_queries": 3,
+    "D_worst_case": 4,
+    "no_oracle_reply_received": true
+  },
+  "Q10": {
+    "x": 7
+  },
+  "Q11": {
+    "box": "A",
+    "truth_values": [
+      false,
+      true,
+      false
+    ]
+  },
+  "Q12": {
+    "minimum_difference": 1,
+    "optimal_partitions": [
+      [
+        [
+          2,
+          4,
+          7
+        ],
+        [
+          3,
+          5,
+          6
+        ]
+      ],
+      [
+        [
+          2,
+          5,
+          6
+        ],
+        [
+          3,
+          4,
+          7
+        ]
+      ],
+      [
+        [
+          2,
+          5,
+          7
+        ],
+        [
+          3,
+          4,
+          6
+        ]
+      ]
+    ]
+  }
+}

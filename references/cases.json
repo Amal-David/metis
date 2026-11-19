@@ -1,391 +1,1050 @@
 {
-  "version": "1.0.0",
-  "description": "Twenty-one curated teaching cards, not twenty-one unique source documents or puzzles. Distinguish sourced evidence from curator inference. Not a training-rights-cleared corpus.",
+  "schema_version": 2,
   "cards": [
     {
-      "id": "official-01-geodesic",
-      "title": "Flag mashups lead to geographic lines",
-      "puzzle_id": "crums2020-mustard",
-      "source_type": "official_solution",
-      "source_url": "https://crumspuzzlehunt.com/solutions/2",
-      "reported_discovery_trigger": null,
-      "documented_evidence": "An official solution uses mashups of national flags and a map/geodesic construction.",
-      "curator_inference": "Consider shifting from flag imagery to relationships among countries and geographic paths.",
-      "contrast_test": "A proposed geographic rule should predict intersections or destinations for cases not used to tune it.",
-      "limitations": "Presented solve, not a dated human discovery history.",
+      "id": "hunt-petroglyph",
+      "puzzle_id": "gph2023-petroglyph",
+      "source_title": "Petroglyph — official solution",
+      "source_kind": "official_solution",
+      "source_url": "https://2023.galacticpuzzlehunt.com/solution/petroglyph",
+      "scope_read": "Complete short solution text; described diagram, not an independent reconstruction.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "role-reassignment",
+      "retrieval_cues": [
+        "directional marks",
+        "rotation centers",
+        "segments",
+        "operator versus object"
+      ],
       "tags": [
-        "geometric",
-        "map",
-        "geodesic",
+        "geometry",
+        "rotation",
         "visual",
-        "relation"
-      ]
+        "anchors"
+      ],
+      "observed": "The explanation associates black segments with gray circles and curved arrows.",
+      "representation_shift": "Circles locate rotation centers; arrows prescribe how segments move.",
+      "documented_trigger": null,
+      "documented_test": null,
+      "documented_false_start": null,
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "Apply one direction convention to several unused groups; reject it if their transformed endpoints fail to align."
+      },
+      "transfer_when": "Repeated marks could define a common geometric operation, as when centers and arcs accompany separate segments.",
+      "dont_transfer_when": "There is no stable pivot or direction convention, or alignment requires a different adjustment for each group.",
+      "outcome_limit": "A published transformation is supplied; the source does not report an unspoiled solver discovery.",
+      "lesson": "Ask what a mark operates on before treating it as another object to identify."
     },
     {
-      "id": "official-02-chalice",
-      "title": "Word lengths correspond to diagram diagonals",
-      "puzzle_id": "crums2020-white",
-      "source_type": "official_solution",
-      "source_url": "https://crumspuzzlehunt.com/solutions/3",
-      "reported_discovery_trigger": null,
-      "documented_evidence": "The solution relates clue-word lengths to the lengths of sloping diagonals of a triangular chalice grid.",
-      "curator_inference": "Treat visible grid capacity and length distribution as mutual constraints, not decorative structure.",
-      "contrast_test": "Try placing independently solved clue words and check overlapping letters without discretionary adjustments.",
-      "limitations": "An official explanation; initial inference chronology is unknown.",
+      "id": "hunt-word-search-ii",
+      "puzzle_id": "gph2019-word-search-ii",
+      "source_title": "Word Search II — official solution and author notes",
+      "source_kind": "official_solution",
+      "source_url": "https://2019.galacticpuzzlehunt.com/solution/word-search-ii.html",
+      "scope_read": "Complete solution text and author notes.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "calibration-and-rule-induction",
+      "retrieval_cues": [
+        "known example",
+        "paired outputs",
+        "controlled perturbation",
+        "decomposition"
+      ],
       "tags": [
-        "grid",
-        "length",
-        "layout",
-        "word",
-        "constraint"
-      ]
+        "oracle",
+        "distance",
+        "calibration",
+        "intervention"
+      ],
+      "observed": "A practice round reveals the targets while guesses receive two distance values.",
+      "representation_shift": "Separate vowel and consonant sequences; each output combines edit-distance contributions from different targets.",
+      "documented_trigger": null,
+      "documented_test": "The published solution recommends guesses differing in one vowel or consonant, then subtracting known contributions.",
+      "documented_false_start": null,
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "Choose two candidate distance rules and submit a valid pair of inputs whose predicted output differences disagree."
+      },
+      "transfer_when": "Known inputs and outputs provide calibration before an unknown target must be recovered.",
+      "dont_transfer_when": "Several input features change together, or a guessed component is subtracted as if already certain.",
+      "outcome_limit": "These are published diagnostics, not a recorded history of a solver running them.",
+      "lesson": "Calibrate on known cases and change one informative component at a time."
     },
     {
-      "id": "official-03-riffle",
-      "title": "Colored stems specify an interleaving operation",
-      "puzzle_id": "crums2020-white",
-      "source_type": "official_solution",
-      "source_url": "https://crumspuzzlehunt.com/solutions/3",
-      "reported_discovery_trigger": null,
-      "documented_evidence": "The solution uses the chalice's colored stem bands to determine how extracted colored letters are riffled.",
-      "curator_inference": "Read a repeated color pattern as an operation/order rather than additional data.",
-      "contrast_test": "Freeze the band-to-letter mapping and check it across multiple chalices.",
-      "limitations": "Same puzzle/source as another card; not independent case.",
+      "id": "hunt-something-is-off",
+      "puzzle_id": "gph2019-something-is-off",
+      "source_title": "Something Is Off — official solution and author notes",
+      "source_kind": "official_solution",
+      "source_url": "https://2019.galacticpuzzlehunt.com/solution/something-is-off/solution.pdf",
+      "scope_read": "Text of all eight PDF pages; solutions and construction notes, without independently resolving the diagrams.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "assumption-audit",
+      "retrieval_cues": [
+        "symmetry",
+        "multiple completions",
+        "implicit uniqueness",
+        "paired extraction"
+      ],
+      "tags": [
+        "logic",
+        "ambiguity",
+        "reflection",
+        "constraints"
+      ],
+      "observed": "Several clue sets are symmetric although particular required regions or counts cannot be symmetric.",
+      "representation_shift": "Keep both legal completions instead of importing the usual expectation of uniqueness.",
+      "documented_trigger": null,
+      "documented_test": "The published arguments construct reflected or rotated completions under unchanged clues.",
+      "documented_false_start": null,
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "Enumerate a small component using explicit rules only; identify any extra convention that removes an otherwise legal completion."
+      },
+      "transfer_when": "A genre convention conflicts with observable symmetry or an explicit count.",
+      "dont_transfer_when": "Uniqueness is an explicit requirement, or a second completion violates a stated rule.",
+      "outcome_limit": "The source intentionally uses two solutions; ambiguity elsewhere does not establish the same intent.",
+      "lesson": "Treat genre expectations as hypotheses until the artifact supports them."
+    },
+    {
+      "id": "hunt-colors",
+      "puzzle_id": "gph2019-colors",
+      "source_title": "Colors — official solution and author notes",
+      "source_kind": "official_solution",
+      "source_url": "https://2019.galacticpuzzlehunt.com/solution/colors.html",
+      "scope_read": "Complete solution text and construction notes; exact color values supplied by the source.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "representation-change",
+      "retrieval_cues": [
+        "restricted alphabet",
+        "exact measurements",
+        "missing symbols",
+        "multiple grids"
+      ],
       "tags": [
         "color",
-        "interleave",
-        "order",
-        "extraction"
-      ]
+        "hexadecimal",
+        "encoding",
+        "canonical-values"
+      ],
+      "observed": "Hexadecimal color strings form small grids with restricted symbol distributions and replaced characters.",
+      "representation_shift": "Treat colors as exact encoded characters, then apply the separate structures revealed by those characters.",
+      "documented_trigger": null,
+      "documented_test": "The published solution repairs missing characters using each grid’s internal rules.",
+      "documented_false_start": "Constructor notes reject a flag-color idea because there was no canonical set of hexadecimal values.",
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "Freeze an encoding from one clear group and check whether it explains an untouched group without adjusting measured values."
+      },
+      "transfer_when": "The artifact exposes reproducible values and several independent anomalies become structured under one encoding.",
+      "dont_transfer_when": "Only approximate displayed colors are available, or values must be tuned until letters appear.",
+      "outcome_limit": "The original data contain exact values; the same method is unreliable on altered screenshots.",
+      "lesson": "Prefer representations that explain several anomalies and depend on reproducible observations."
     },
     {
-      "id": "official-04-tree",
-      "title": "Pictures as terminal clues in a recursive tree",
-      "puzzle_id": "crums2020-spaghetti",
-      "source_type": "official_solution",
-      "source_url": "https://crumspuzzlehunt.com/solutions/4",
-      "reported_discovery_trigger": null,
-      "documented_evidence": "The official solution describes a rooted tree: images at leaves are identified and reparsed into crossword-style clues, which recursively combine.",
-      "curator_inference": "Reframe the diagram as a computation graph where each node's output becomes a parent clue.",
-      "contrast_test": "Predict an unworked internal node from its children, then check propagation toward the root.",
-      "limitations": "This teaches the published mechanism, not a firsthand solver breakthrough.",
+      "id": "hunt-line-plots",
+      "puzzle_id": "gph2019-line-plots",
+      "source_title": "Line Plots — official solution and author notes",
+      "source_kind": "official_solution",
+      "source_url": "https://2019.galacticpuzzlehunt.com/solution/line-plots.html",
+      "scope_read": "Complete solution text and author notes; graphs not independently reconstructed.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "representation-change",
+      "retrieval_cues": [
+        "semantic axes",
+        "irregular numbering",
+        "dates",
+        "shared pictorial labels"
+      ],
       "tags": [
-        "tree",
-        "recursive",
-        "graph",
+        "coordinates",
+        "time",
+        "identification",
+        "icons"
+      ],
+      "observed": "Graphs combine dates, unusual numeric jumps, and icons that recur across series.",
+      "representation_shift": "Coordinates represent release dates and numbers in titles; icons supply other title components.",
+      "documented_trigger": null,
+      "documented_test": "The author reports that testsolvers used release years and enumerations to identify unfamiliar series.",
+      "documented_false_start": null,
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "Infer the axes from one recognizable series and predict several points in another before looking up its name."
+      },
+      "transfer_when": "Dates and discontinuous numbering suggest labels or catalog conventions rather than a measured physical quantity.",
+      "dont_transfer_when": "The model explains only one graph or requires unconstrained omissions and rescaling.",
+      "outcome_limit": "The author explicitly documents omitted installments and a subtitle-icon exception.",
+      "lesson": "Establish what the axes mean before fitting a numerical pattern."
+    },
+    {
+      "id": "hunt-cuspidation",
+      "puzzle_id": "gph2019-cuspidation",
+      "source_title": "Cuspidation — official solution and author notes",
+      "source_kind": "official_solution",
+      "source_url": "https://2019.galacticpuzzlehunt.com/solution/cuspidation.html",
+      "scope_read": "Complete textual mechanism and construction notes; animations not replayed.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "state-transition",
+      "retrieval_cues": [
+        "static trace",
+        "motion",
+        "collision timing",
+        "event order"
+      ],
+      "tags": [
+        "arrows",
+        "simulation",
+        "constraints",
+        "timeline"
+      ],
+      "observed": "Arrowheads, circled letters, intersections, and a timeline appear together.",
+      "representation_shift": "The picture represents moving arrows; particular collisions remove letters at determined times.",
+      "documented_trigger": "Constructor account: the initial goal was a new logic puzzle whose rules were conveyed visually.",
+      "documented_test": "Constructor account: candidate relaunch phrases were simulated to reject head-on collisions.",
+      "documented_false_start": "An earlier extraction used a separate letter grid; the constructor replaced it with a second launch.",
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "Fit launch times to a small collision set and predict an unused intersection, including events that must not occur."
+      },
+      "transfer_when": "Directional objects and time markers jointly support interpreting a picture as a process.",
+      "dont_transfer_when": "Motion is only metaphorical, or event timing has no checkable consequences.",
+      "outcome_limit": "The source explains the finished simulation; no independent replay was performed for this card.",
+      "lesson": "A dynamic interpretation should predict both events and forbidden events."
+    },
+    {
+      "id": "hunt-ministry-word-searches",
+      "puzzle_id": "gph2019-ministry-of-word-searches",
+      "source_title": "Ministry of Word Searches — official solution and author notes",
+      "source_kind": "official_solution",
+      "source_url": "https://2019.galacticpuzzlehunt.com/solution/ministry-of-word-searches.html",
+      "scope_read": "Main solution and author notes through generator reconstruction; appendix not reviewed.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "generator-inference",
+      "retrieval_cues": [
+        "changing instances",
+        "short periods",
+        "overwrite priority",
+        "hidden generator"
+      ],
+      "tags": [
+        "modular",
+        "periodicity",
+        "interaction",
+        "invariants"
+      ],
+      "observed": "Refreshes change word placements while the same names and fragments of filler recur.",
+      "representation_shift": "Model identifier-dependent placement cycles, wrapping, and overwrite order instead of treating grids independently.",
+      "documented_trigger": null,
+      "documented_test": "The published method compares consecutive identifiers, beginning with a word that alternates between two positions.",
+      "documented_false_start": null,
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "Fit the smallest periodic subsystem, freeze its parameters, and predict positions for identifiers not used in fitting."
+      },
+      "transfer_when": "Repeated instances preserve identities while a small controllable input changes arrangement.",
+      "dont_transfer_when": "Instances are independently random or the apparent period vanishes on new identifiers.",
+      "outcome_limit": "The source reconstructs the generator; its large-number computation was not repeated in this audit.",
+      "lesson": "A simple subsystem can expose a generator that organizes the entire artifact."
+    },
+    {
+      "id": "hunt-make-your-own-crossword",
+      "puzzle_id": "gph2019-make-your-own-crossword",
+      "source_title": "Make Your Own Crossword — official solution and author notes",
+      "source_kind": "official_solution",
+      "source_url": "https://2019.galacticpuzzlehunt.com/solution/make-your-own-crossword.html",
+      "scope_read": "Complete solution text, example input/output grids, and author notes.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "experiment-design",
+      "retrieval_cues": [
+        "unknown mapping",
+        "input coverage",
+        "controlled submission",
+        "missing categories"
+      ],
+      "tags": [
+        "interaction",
+        "substitution",
+        "coverage",
+        "crossword"
+      ],
+      "observed": "A valid submitted grid returns with consistent replacements for its characters.",
+      "representation_shift": "The crossword is an experimental input that exposes an unknown character mapping.",
+      "documented_trigger": null,
+      "documented_test": "The published example revises its input to include previously absent letters and recover additional mapping entries.",
+      "documented_false_start": null,
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "List unobserved input categories and design the next valid submission to cover several of them; check repeated characters for consistency."
+      },
+      "transfer_when": "An interface accepts chosen inputs and returns a stable transformation with observable gaps.",
+      "dont_transfer_when": "Mappings depend on unmodeled context or submission rules cannot be satisfied by the proposed probe.",
+      "outcome_limit": "The example improves coverage; it does not establish an optimal query strategy.",
+      "lesson": "Choose the next input to resolve a named information gap."
+    },
+    {
+      "id": "hunt-holistic",
+      "puzzle_id": "gph2019-holistic",
+      "source_title": "Holistic — official solution and author notes",
+      "source_kind": "official_solution",
+      "source_url": "https://2019.galacticpuzzlehunt.com/solution/holistic.html",
+      "scope_read": "Complete solution text; invariant arguments in questions 4 and 8 inspected, move strings not independently executed.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "invariants",
+      "retrieval_cues": [
+        "reachability",
+        "checkerboard counts",
+        "state orientation",
+        "impossibility certificate"
+      ],
+      "tags": [
+        "parity",
+        "logic",
+        "conservation",
+        "moves"
+      ],
+      "observed": "Several game subquestions ask whether a destination or configuration is attainable.",
+      "representation_shift": "Track properties preserved or alternated by moves instead of enumerating every move sequence.",
+      "documented_trigger": null,
+      "documented_test": "The published arguments compare checkerboard populations and relate square color to reachable orientations.",
+      "documented_false_start": null,
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "State a candidate invariant, check every legal move type, then compare the initial state with the proposed target."
+      },
+      "transfer_when": "A large move space has a small quantity whose update can be proved for every move.",
+      "dont_transfer_when": "An overlooked move breaks the claimed invariant or an invariant is mistaken for a sufficient condition.",
+      "outcome_limit": "The invariants address particular subquestions; game identification and extraction remain separate steps.",
+      "lesson": "Use a short obstruction to prune search while retaining the distinction between necessary and sufficient conditions."
+    },
+    {
+      "id": "hunt-beige-flags",
+      "puzzle_id": "gph2023-beige-flags",
+      "source_title": "Beige Flags — official solution",
+      "source_kind": "official_solution",
+      "source_url": "https://2023.galacticpuzzlehunt.com/solution/beige_flags",
+      "scope_read": "Mechanism explanation and solution table; original flag images not independently identified.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "cross-channel-constraints",
+      "retrieval_cues": [
+        "independent channels",
+        "letter multisets",
+        "paired clues",
+        "single extra symbol"
+      ],
+      "tags": [
         "visual",
-        "word"
-      ]
+        "wordplay",
+        "pairing",
+        "anagram"
+      ],
+      "observed": "City flags are paired with sentences containing enumerated missing phrases.",
+      "representation_shift": "Compare the identified city with its solved phrase: the phrase uses the same letters plus one additional letter.",
+      "documented_trigger": null,
+      "documented_test": null,
+      "documented_false_start": null,
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "Solve a clear image and phrase independently, compare their letter counts, then test the unchanged relation on a second pair."
+      },
+      "transfer_when": "Two independently interpretable channels are paired and their lengths or counts suggest a fixed relation.",
+      "dont_transfer_when": "One identification is selected only because it yields a desired extra letter.",
+      "outcome_limit": "The official table supplies consistent pairings but no historical discovery account.",
+      "lesson": "Let independently obtained identifications constrain one another without hiding uncertainty."
     },
     {
-      "id": "official-05-reparse",
-      "title": "Meaning depends on reparsing word boundaries",
-      "puzzle_id": "crums2020-spaghetti",
-      "source_type": "official_solution",
-      "source_url": "https://crumspuzzlehunt.com/solutions/4",
-      "reported_discovery_trigger": null,
-      "documented_evidence": "The solution illustrates pictures for NO and THIGH being reparsed as NOT HIGH, a clue for LOW.",
-      "curator_inference": "Words can be meaningful *after* boundary changes; surface word segmentation is not fixed.",
-      "contrast_test": "Test if several sibling nodes yield valid downstream clues under the same reparsing rule.",
-      "limitations": "Do not treat arbitrary phrase punning as a proof of intended mechanism.",
+      "id": "solver-net-tatham",
+      "puzzle_id": "game-net-tatham",
+      "source_title": "Writing a solver for Net",
+      "source_kind": "solver_retrospective",
+      "source_url": "https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/net-solver/",
+      "scope_read": "Complete essay, including local domains, loop avoidance, reachability bounds, and unimplemented parity.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "representation-change",
+      "retrieval_cues": [
+        "partial certainty",
+        "edge states",
+        "connectivity",
+        "small exceptional case"
+      ],
       "tags": [
-        "reparse",
-        "word",
+        "graph",
         "boundary",
-        "semantic",
-        "recursive"
-      ]
+        "propagation",
+        "reachability",
+        "parity"
+      ],
+      "observed": "Some connections can be fixed while the orientations of their adjacent tiles remain ambiguous.",
+      "representation_shift": "Represent tile domains and edge domains separately; add component information and directional reachability bounds.",
+      "documented_trigger": "Tatham reports noticing deductions that did not require fixing a whole tile.",
+      "documented_test": "The generalized connectivity rule handles the exceptional two-square board described in the account.",
+      "documented_false_start": "Tatham initially rotated pieces by trial and error before noticing forced deductions.",
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "Find an ambiguous tile with a forced edge; test any generalized connectivity rule on the smallest legal exceptional board."
+      },
+      "transfer_when": "Relations become certain before the objects containing them, or several local tricks share a boundary condition.",
+      "dont_transfer_when": "The puzzle permits cycles or disconnected components excluded by Net’s rules.",
+      "outcome_limit": "This concerns a reusable game, not one instance; regional parity was not implemented in the described solver.",
+      "lesson": "Store partial certainty and seek one invariant behind special cases."
     },
     {
-      "id": "official-06-cutcoin",
-      "title": "Flavor geometry motivates an unusual crossword shape",
-      "puzzle_id": "crums2020-plum",
-      "source_type": "official_solution",
-      "source_url": "https://crumspuzzlehunt.com/solutions/6",
-      "reported_discovery_trigger": null,
-      "documented_evidence": "The official solution links a cut Guadeloupe coin with an irregularly shaped gridless crossword.",
-      "curator_inference": "Treat a reference object's shape as a constraint on layout and manipulation.",
-      "contrast_test": "Before reading extracted words, check whether the proposed shape accounts for the full grid structure.",
-      "limitations": "Historical reference and shape are supplied by source; creative motivation is curator inference.",
+      "id": "constructor-tatham-generation",
+      "puzzle_id": null,
+      "source_title": "How to write a new puzzle",
+      "source_kind": "constructor_notes",
+      "source_url": "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/devel/writing.html",
+      "scope_read": "Sections 6.1 and 6.2.1 on fairness, observational equivalence, and generation; implementation sections excluded.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "assumption-audit",
+      "retrieval_cues": [
+        "hidden state",
+        "observational equivalence",
+        "identifiability",
+        "inverse construction"
+      ],
       "tags": [
+        "guide",
+        "generation",
+        "ambiguity",
+        "solvability"
+      ],
+      "observed": "The guide distinguishes a reachable solution from one discoverable using available information.",
+      "representation_shift": "When hidden arrangements cannot be distinguished by any permitted observation, the accepted object can be an equivalence class.",
+      "documented_trigger": null,
+      "documented_test": null,
+      "documented_false_start": null,
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "Construct two hidden states satisfying every observable constraint and specify whether the task accepts both or requires a distinguishing observation."
+      },
+      "transfer_when": "A hidden-state puzzle appears ambiguous despite all available observations being exhausted.",
+      "dont_transfer_when": "The task explicitly demands the original hidden state and actually supplies evidence distinguishing it.",
+      "outcome_limit": "General construction guidance, not a particular solve trace; acceptance criteria vary by game.",
+      "lesson": "Separate existence, discoverability, and identifiability before claiming a unique solution."
+    },
+    {
+      "id": "solver-bends-phenomist",
+      "puzzle_id": "bends-2021",
+      "source_title": "Solving bENDs",
+      "source_kind": "solver_retrospective",
+      "source_url": "https://phenomist.wordpress.com/2021/06/12/solving-bends-password-protected-due-to-spoilers/",
+      "scope_read": "Physical attempt, input model, coordinate representation, pruning, and incomplete-verification sections.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "representation-change",
+      "retrieval_cues": [
+        "physical model",
+        "folding",
+        "face orientation",
+        "partial verification"
+      ],
+      "tags": [
+        "spatial",
+        "tree",
+        "constraints",
+        "calibration"
+      ],
+      "observed": "One assembled net yielded words and a single number in each viewing direction.",
+      "representation_shift": "Encode the net as a parent-linked tree with face centers and orientations.",
+      "documented_trigger": "The author reports that manipulating small printouts became too frustrating to continue by hand.",
+      "documented_test": "Fold counts, reused face centers, cube counts, and numbers per viewing direction pruned candidates.",
+      "documented_false_start": "Representing faces by corner coordinates made transformations cumbersome.",
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "Verify closure, exposed faces, and projection independently on a remaining candidate before using readable extraction as confirmation."
+      },
+      "transfer_when": "A physical manipulation has a compact local transformation but is difficult to perform reliably.",
+      "dont_transfer_when": "The symbolic model omits collision or visibility constraints that determine physical validity.",
+      "outcome_limit": "The author explicitly says cube-count filtering admitted invalid foldings; extraction narrowed candidates without full geometric verification.",
+      "lesson": "A useful representation can accelerate discovery while leaving a clearly stated verification gap."
+    },
+    {
+      "id": "constructor-chen-loop-fusion",
+      "puzzle_id": "tmh2025-black-or-white-or-moon-or-sun",
+      "source_title": "Teammate Hunt 2025 Author Notes — Black or White or Moon or Sun",
+      "source_kind": "constructor_notes",
+      "source_url": "https://blog.evanchen.cc/tmh-2025/",
+      "scope_read": "Combined-loop puzzle’s high-level and low-level design sections, including its introductory feeder context.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "calibration-and-rule-induction",
+      "retrieval_cues": [
+        "combined rules",
+        "small calibration example",
+        "checksum counts",
+        "global propagation"
+      ],
+      "tags": [
+        "loop",
+        "rule-induction",
+        "graph",
+        "testsolving"
+      ],
+      "observed": "Related small examples and symbol counts help establish a combined loop rule set.",
+      "representation_shift": "Room types form a bipartite relationship that supports propagation across the grid.",
+      "documented_trigger": "Chen sought another closed-loop genre that could be combined with Masyu.",
+      "documented_test": "He alternated automated solution/uniqueness checks with hand solving while changing givens.",
+      "documented_false_start": "A version without given moons removed the sun-or-moon reasoning he wanted solvers to use.",
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "Freeze the inferred rules after a small example and test another grid against both legality and supplied counts."
+      },
+      "transfer_when": "Repeated examples and redundant totals can confirm a proposed combination of familiar rule systems.",
+      "dont_transfer_when": "Counts are forced into a checksum interpretation without testing competing roles.",
+      "outcome_limit": "This documents design choices, not a particular solver’s discovery; automated uniqueness alone did not establish a satisfying solve path.",
+      "lesson": "Use teaching examples and independent checks to support rule induction."
+    },
+    {
+      "id": "constructor-berlin-testsolvers",
+      "puzzle_id": null,
+      "source_title": "Advice To The Puzzlers",
+      "source_kind": "constructor_notes",
+      "source_url": "https://www.ericberlin.com/2022/01/23/advice-to-the-puzzlers/",
+      "scope_read": "Believe the testsolvers section; surrounding hunt-management advice excluded.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "assumption-audit",
+      "retrieval_cues": [
+        "intended signal",
+        "unintended interpretation",
+        "independent solver",
+        "false lead"
+      ],
+      "tags": [
+        "guide",
+        "author-intent",
+        "testsolving",
+        "interpretation"
+      ],
+      "observed": "Berlin warns that author expectations and testsolvers’ actual interpretations often diverge.",
+      "representation_shift": "Treat intended signaling separately from evidence about what an unspoiled solver notices.",
+      "documented_trigger": null,
+      "documented_test": null,
+      "documented_false_start": null,
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "Give the artifact to a fresh solver without the favored interpretation and compare which details drive their next action."
+      },
+      "transfer_when": "A proposed mechanism rests mainly on what the constructor supposedly wanted a detail to mean.",
+      "dont_transfer_when": "An explicit rule is being ignored merely because another interpretation feels more natural.",
+      "outcome_limit": "General advice and illustrative failure modes; the passage does not report a specific timed trial.",
+      "lesson": "A plausible association is a hypothesis about intent, not evidence that the intended connection was found."
+    },
+    {
+      "id": "constructor-cjq-operative-semantics",
+      "puzzle_id": "mh2021-crossed-out",
+      "source_title": "Two hundred puzzles, fifty weeks later — Crossed Out",
+      "source_kind": "constructor_notes",
+      "source_url": "https://mitadmissions.org/blogs/entry/two-hundred-puzzles-2/",
+      "scope_read": "Crossed Out account in group writing sessions; general theme/mechanism discussion also inspected.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "role-reassignment",
+      "retrieval_cues": [
+        "symbol as operator",
+        "answer properties",
+        "backward design",
+        "theme into procedure"
+      ],
+      "tags": [
+        "construction",
+        "multiplication",
+        "wordplay",
+        "operations"
+      ],
+      "observed": "The assigned answer’s repeated letter led constructors to objects displaying that letter.",
+      "representation_shift": "An alphabetic character became an arithmetic operator connecting the pictured objects.",
+      "documented_trigger": "The group linked repeated Xs to objects containing Xs, then to multiplication.",
+      "documented_test": "The account says pictures were selected and the puzzle was testsolved that evening.",
+      "documented_false_start": null,
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "For an association, specify its inputs and executable operation, then test it on a second object without changing the rule."
+      },
+      "transfer_when": "A distinctive feature has both a literal identity and an operational meaning supported by the artifact.",
+      "dont_transfer_when": "A theme suggests many associations but none determines a repeatable operation.",
+      "outcome_limit": "Construction history; no detailed testsolver path or test result is supplied.",
+      "lesson": "Turn a thematic association into a procedure with checkable inputs and outputs."
+    },
+    {
+      "id": "solver-rubio-sudoku-poetry",
+      "puzzle_id": "pse-45548-sudoku-poetry",
+      "source_title": "Sudoku as Poetry: A Tag-Fusion Masterpiece — Rubio’s answer",
+      "source_kind": "solver_retrospective",
+      "source_url": "https://puzzling.stackexchange.com/questions/45548/sudoku-as-poetry-a-tag-fusion-masterpiece",
+      "scope_read": "Answer’s solving account and author follow-up comments; completed grid not independently verified.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "cross-channel-constraints",
+      "retrieval_cues": [
+        "coupled constraints",
+        "partial text",
+        "logic grid",
+        "residual ambiguity"
+      ],
+      "tags": [
+        "language",
+        "sudoku",
+        "ordering",
+        "propagation"
+      ],
+      "observed": "Grid deductions and the incomplete poem leave different unresolved choices.",
+      "representation_shift": "Treat the grid and text as coupled constraints rather than finishing one before using the other.",
+      "documented_trigger": "Rubio turned to likely letters and words after ordinary Sudoku deductions stalled.",
+      "documented_test": "The solver reports alternating linguistic completions with grid deductions.",
+      "documented_false_start": null,
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "Propagate a proposed word through every affected grid constraint and distinguish a likely completion from a forced one."
+      },
+      "transfer_when": "Two channels independently constrain shared variables, and progress in either can unlock the other.",
+      "dont_transfer_when": "Natural language plausibility is treated as a proof of uniqueness.",
+      "outcome_limit": "The grid alone remained underconstrained; the author clarified spectrum ordering in comments.",
+      "lesson": "Cross-check independent channels while explicitly preserving residual ambiguity."
+    },
+    {
+      "id": "solver-quarkle-ternary",
+      "puzzle_id": "pse-44924-math-english",
+      "source_title": "When math and english collide! — quarkle’s answer",
+      "source_kind": "solver_retrospective",
+      "source_url": "https://puzzling.stackexchange.com/questions/44924/when-math-and-english-collide",
+      "scope_read": "Accepted answer and visible segmentation discussion.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "calibration-and-rule-induction",
+      "retrieval_cues": [
+        "restricted symbol alphabet",
+        "known pair",
+        "segmentation",
+        "alternative decoding"
+      ],
+      "tags": [
+        "base-conversion",
+        "word",
+        "ambiguity",
+        "calibration"
+      ],
+      "observed": "A numeric string uses only three digits and includes a conspicuous repeated run.",
+      "representation_shift": "Segment digits into letter indices written in another base.",
+      "documented_trigger": "The solver explicitly cites the digit restriction; a comment identifies the repeated run as helpful.",
+      "documented_test": "The proposed conversion reproduces the supplied known word.",
+      "documented_false_start": null,
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "Enumerate alternative segmentations under the same encoding and determine which additional condition selects the proposed word."
+      },
+      "transfer_when": "A restricted alphabet and a known example jointly constrain an encoding.",
+      "dont_transfer_when": "A readable result is accepted without checking alternate segmentation or indexing conventions.",
+      "outcome_limit": "A commenter supplies a different valid letter sequence; readability alone does not prove uniqueness.",
+      "lesson": "Use structural restrictions to propose an encoding, then test the ambiguity the encoding leaves."
+    },
+    {
+      "id": "solver-triangular-rule",
+      "puzzle_id": "pse-51541-triangular-rule",
+      "source_title": "Find out the rule, then solve it — Beastly Gerbil’s answer",
+      "source_kind": "solver_retrospective",
+      "source_url": "https://puzzling.stackexchange.com/questions/51541/find-out-the-rule-then-solve-it/51544",
+      "scope_read": "Solver’s rule, arithmetic checks, short solving account, and orientation clarification in comments.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "experiment-design",
+      "retrieval_cues": [
+        "small candidate domain",
+        "orientation-sensitive rule",
+        "local branch",
+        "counterexample"
+      ],
+      "tags": [
+        "arithmetic",
+        "constraints",
+        "scope",
+        "branching"
+      ],
+      "observed": "The stated arithmetic rule depends on triangle orientation and red-dot adjacency.",
+      "representation_shift": "Convert visible groups into arithmetic constraints with explicit eligibility conditions.",
+      "documented_trigger": null,
+      "documented_test": "The solver tried two possible pairs beneath a fixed number and rejected the first.",
+      "documented_false_start": "The first of those two candidate pairs did not work.",
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "Check the rule on every eligible group and explain why visually similar excluded groups do not satisfy its eligibility condition."
+      },
+      "transfer_when": "One tightly constrained local choice divides the remaining search into a few testable branches.",
+      "dont_transfer_when": "Group orientation is selected after seeing which numerical relation happens to fit.",
+      "outcome_limit": "Discussion was needed to clarify orientation; the card does not independently prove the solver’s uniqueness claim.",
+      "lesson": "Make rule scope explicit before treating a counterexample or successful branch as decisive."
+    },
+    {
+      "id": "solver-word-grid-diagonal",
+      "puzzle_id": "pse-139692-word-grid-diagonal",
+      "source_title": "What goes in the diagonal? — answer and corrections",
+      "source_kind": "solver_retrospective",
+      "source_url": "https://puzzling.stackexchange.com/questions/139692/what-goes-in-the-diagonal",
+      "scope_read": "Posted answer and author/commenter corrections; original image constraints not independently recomputed.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "cross-channel-constraints",
+      "retrieval_cues": [
+        "intersecting properties",
+        "local versus global fit",
+        "word grid",
+        "final refinement"
+      ],
+      "tags": [
+        "word-properties",
+        "ambiguity",
+        "extraction",
+        "correction"
+      ],
+      "observed": "Rows and columns constrain entries using different word properties.",
+      "representation_shift": "A missing word must satisfy its row, its column, and the complete phrase.",
+      "documented_trigger": null,
+      "documented_test": "The posted explanation checks local properties; subsequent discussion checks the full phrase.",
+      "documented_false_start": "The posted bottom-right entry fit locally but was replaced in discussion to complete the intended phrase.",
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "Check every candidate against both local properties before testing the global phrase; retain alternatives that still fit."
+      },
+      "transfer_when": "Several individually plausible entries must jointly form another constrained object.",
+      "dont_transfer_when": "The global phrase is used to excuse a failed row or column property.",
+      "outcome_limit": "The final correction is in comments; no exhaustive uniqueness proof is supplied.",
+      "lesson": "Local validity may be necessary without being sufficient for the complete extraction."
+    },
+    {
+      "id": "solver-phenomist-2025",
+      "puzzle_id": "mh2025-engagements-and-other-crimes",
+      "source_title": "2025 MIT Mystery Hunt — Engagements and other Crimes",
+      "source_kind": "solver_retrospective",
+      "source_url": "https://phenomist.wordpress.com/2025/01/23/2025-mit-mystery-hunt/",
+      "scope_read": "Invitation-puzzle paragraph; neighboring puzzle comments inspected only to separate their events.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "role-reassignment",
+      "retrieval_cues": [
+        "presentation change",
+        "paired marks",
+        "paper affordance",
+        "fold alignment"
+      ],
+      "tags": [
+        "folding",
+        "medium",
+        "observation",
+        "collaboration"
+      ],
+      "observed": "An invitation arrived as a PDF without the usual non-puzzle disclaimer; paired dots were found.",
+      "representation_shift": "Treat the invitation as an object to manipulate, with dot pairs constraining folds.",
+      "documented_trigger": "The author says the changed presentation prompted suspicion that the invitation was a puzzle.",
+      "documented_test": "Several teammates found the dots, determined the folds, folded the artifact, and read its answer.",
+      "documented_false_start": null,
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "Align a clear dot pair on a copy and predict what another pair or exposed text must do under the same manipulation."
+      },
+      "transfer_when": "Changes to the medium and repeated alignment marks jointly support physical manipulation.",
+      "dont_transfer_when": "An ordinary formatting difference is the only clue, or folds are chosen to force desired text.",
+      "outcome_limit": "A compressed collaborative retrospective; it does not attribute every intermediate insight to an individual.",
+      "lesson": "Explore the medium’s affordances while keeping reported observations separate from presumed prior work."
+    },
+    {
+      "id": "hunt-crums-great-circle",
+      "puzzle_id": "crums2020-vexillologygreatcirclejerk",
+      "source_title": "/r/vexillologygreatcirclejerk — official solution and construction notes",
+      "source_kind": "official_solution",
+      "source_url": "https://crumspuzzlehunt.com/solutions/2",
+      "scope_read": "Text of all three PDF pages, including route instructions and construction notes; maps not independently replotted.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "representation-change",
+      "retrieval_cues": [
+        "paired identities",
+        "geographic relations",
+        "reference points",
+        "near intersections"
+      ],
+      "tags": [
+        "flags",
+        "geometry",
+        "map",
+        "great-circle"
+      ],
+      "observed": "Nine flag mashups pair locations; title and flavor text point toward spherical routes and capitals.",
+      "representation_shift": "Map each flag pair to a great-circle route between capitals and inspect the resulting small triangular regions.",
+      "documented_trigger": null,
+      "documented_test": null,
+      "documented_false_start": null,
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "Fix the identified locations, capital coordinates, and route convention before testing whether unused pairs participate in the same geometric pattern."
+      },
+      "transfer_when": "Paired geographic identities are accompanied by independent clues to a particular route and reference point.",
+      "dont_transfer_when": "Arbitrary points or map projections are adjusted to manufacture intersections.",
+      "outcome_limit": "The source describes near-intersections enclosing regions, not exact triple intersections; geometry was not independently reproduced.",
+      "lesson": "Convert paired identities into a constrained spatial relation, with measurement tolerance stated."
+    },
+    {
+      "id": "hunt-crums-mixed-drinks",
+      "puzzle_id": "crums2020-mixed-drinks",
+      "source_title": "Mixed Drinks — official solution and construction notes",
+      "source_kind": "official_solution",
+      "source_url": "https://crumspuzzlehunt.com/solutions/3",
+      "scope_read": "Solution explanation and opening construction notes; grid fills not independently checked.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "cross-channel-constraints",
+      "retrieval_cues": [
+        "word length distribution",
+        "diagonal capacity",
+        "overlapping letters",
+        "color interleaving"
+      ],
+      "tags": [
+        "grid",
         "shape",
+        "order",
+        "crossword"
+      ],
+      "observed": "Two alphabetized clue lists match the capacities of sloping diagonals in chalice-shaped grids.",
+      "representation_shift": "Use the shape as a crossword constraint; later, colored stem bands specify how selected letters interleave.",
+      "documented_trigger": null,
+      "documented_test": "The published explanation aligns independently clued words by length and requires their shared cells to agree.",
+      "documented_false_start": null,
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "Place several independently solved words using a fixed diagonal convention, then test all crossings and apply one color-order rule to another chalice."
+      },
+      "transfer_when": "A distinctive layout matches an independently observed length distribution and repeated colors may encode order.",
+      "dont_transfer_when": "Words must be altered to fit the shape or the ordering changes separately for each example.",
+      "outcome_limit": "The source presents a solution, not a solver’s discovery chronology.",
+      "lesson": "Let layout capacity, crossings, and repeated ordering marks constrain each other."
+    },
+    {
+      "id": "hunt-crums-spaghetti-stack",
+      "puzzle_id": "crums2020-spaghetti-stack",
+      "source_title": "Spaghetti Stack — official solution and construction notes",
+      "source_kind": "official_solution",
+      "source_url": "https://crumspuzzlehunt.com/solutions/4",
+      "scope_read": "Mechanism paragraph and construction notes on both PDF pages; full tree labels not independently solved.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "recursive-reparsing",
+      "retrieval_cues": [
+        "recursive clues",
+        "word boundaries",
+        "rooted tree",
+        "terminal nodes"
+      ],
+      "tags": [
+        "graph",
+        "reparse",
+        "pictures",
+        "termination"
+      ],
+      "observed": "Pictures occupy the leaves of a rooted tree; combined labels can be reparsed into new clues.",
+      "representation_shift": "A node’s answer becomes input to its parent, so the diagram acts as a repeated clue-evaluation procedure.",
+      "documented_trigger": "Constructor account: pictures were introduced to give the recursive clueing definite endpoints.",
+      "documented_test": "Constructor account: a central branch was simplified after repeatedly stumping testsolvers.",
+      "documented_false_start": "An early direct parsing of the final answer seemed too easy to bypass; a subsequent code-based idea also stalled.",
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "Evaluate an unworked internal node from its children using the same boundary-change rule and check its parent without inventing extra letters."
+      },
+      "transfer_when": "A hierarchy repeatedly combines outputs and supplies recognizable leaf inputs.",
+      "dont_transfer_when": "Every node requires a different arbitrary wordplay convention or the graph has no justified evaluation order.",
+      "outcome_limit": "The final clue uses theme in selecting its answer; no independent verification of every branch was performed.",
+      "lesson": "Test whether a diagram expresses a repeated computation and whether its special endpoints bound that computation."
+    },
+    {
+      "id": "hunt-crums-inflation",
+      "puzzle_id": "crums2020-inflation",
+      "source_title": "Inflation — official solution and construction notes",
+      "source_kind": "official_solution",
+      "source_url": "https://crumspuzzlehunt.com/solutions/6",
+      "scope_read": "Text of all three PDF pages, including the coin motivation, inserted crossword, bond clues, and construction history.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "literal-affordance",
+      "retrieval_cues": [
+        "missing shape",
+        "repair operation",
+        "unused clue class",
+        "historical artifact"
+      ],
+      "tags": [
         "crossword",
         "layout",
-        "physical",
-        "analogy"
-      ]
+        "insertion",
+        "physical-analogy"
+      ],
+      "observed": "An unusual crossword shape accompanies a cut-coin reference and a separate unused class of bond clues.",
+      "representation_shift": "Insert the referenced earlier crossword into the gap; bond entries join inner and outer grids.",
+      "documented_trigger": "Constructor account: a useful word in the historical crossword suggested the mechanism; the coin reference was added later.",
+      "documented_test": null,
+      "documented_false_start": "A different coin-identification prototype reached internal testing but was abandoned as too fiddly.",
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "Check the proposed insertion against dimensions, crossings, and every unused bond clue before extracting an answer."
+      },
+      "transfer_when": "A missing region and an independently identified object support a literal repair with constrained joins.",
+      "dont_transfer_when": "The resemblance is only thematic or the proposed insert does not satisfy crossing clues.",
+      "outcome_limit": "The historical coin motivated presentation after the core construction; it was not the reported origin of the mechanism.",
+      "lesson": "An unused clue category can validate a literal operation suggested by the artifact’s shape."
     },
     {
-      "id": "official-07-timeline",
-      "title": "Testimony paragraphs form an interleaved timeline",
-      "puzzle_id": "crums2020-locked-room",
-      "source_type": "official_solution",
+      "id": "hunt-crums-locked-room-murder",
+      "puzzle_id": "crums2020-locked-room-murder",
+      "source_title": "Locked Room Murder — official solution and construction notes",
+      "source_kind": "official_solution",
       "source_url": "https://crumspuzzlehunt.com/solutions/7",
-      "reported_discovery_trigger": null,
-      "documented_evidence": "The official solution combines testimony paragraphs by Clue-character turn order to reconstruct events.",
-      "curator_inference": "Reframe independent narratives as interleaved observations of one evolving state.",
-      "contrast_test": "Use ordering to deduce a location at an unseen turn, and reject sequences violating other testimony.",
-      "limitations": "Full-solution chronology is not necessarily solver discovery chronology.",
+      "scope_read": "Timeline introduction, selected testimony rows, contradiction/extraction explanation, and construction opening.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "state-transition",
+      "retrieval_cues": [
+        "interleaved narratives",
+        "shared timeline",
+        "contradictory testimony",
+        "occupancy counts"
+      ],
       "tags": [
-        "timeline",
-        "interleave",
         "logic",
+        "ordering",
         "state",
-        "narrative"
-      ]
+        "meta"
+      ],
+      "observed": "Six testimonies share lighting phases and paragraph structure while describing overlapping events.",
+      "representation_shift": "Interleave paragraphs in character turn order to reconstruct one evolving state; room visits then place feeder letters.",
+      "documented_trigger": null,
+      "documented_test": "The published reconstruction checks one account against the others and links room-visit counts to answer lengths.",
+      "documented_false_start": null,
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "Freeze the proposed ordering and predict an unexamined meeting or location; reject it if another testimony makes that event impossible."
+      },
+      "transfer_when": "Multiple narratives describe shared events and expose recurring order or phase markers.",
+      "dont_transfer_when": "Accounts have no synchronization evidence or contradictions are removed by inventing unstated events.",
+      "outcome_limit": "The timeline is only one stage; a separate letter-placement mechanism is required to finish the meta.",
+      "lesson": "Use shared events to align narratives, then test the alignment against independent constraints."
     },
     {
-      "id": "official-08-meta",
-      "title": "A phrase changes role from answer to instruction for next puzzle",
+      "id": "hunt-crums-accusation",
       "puzzle_id": "crums2020-accusation",
-      "source_type": "official_solution",
+      "source_title": "Accusation — official solution and construction notes",
+      "source_kind": "official_solution",
       "source_url": "https://crumspuzzlehunt.com/solutions/8",
-      "reported_discovery_trigger": null,
-      "documented_evidence": "The final solution uses a Sherlock Holmes reference and an enumeration to obtain SCARLET IN A STUDY.",
-      "curator_inference": "Treat a previous answer as input to a second-stage transformation, not only as an endpoint.",
-      "contrast_test": "Verify the reinterpreted phrase matches the requested answer format and prior constraints.",
-      "limitations": "Multi-stage hunt conventions may not transfer to standalone tasks.",
+      "scope_read": "Complete one-page PDF.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "role-reassignment",
+      "retrieval_cues": [
+        "answer as new input",
+        "reference identification",
+        "enumeration",
+        "shortcut versus mechanism"
+      ],
       "tags": [
         "meta",
         "wordplay",
-        "reparse",
-        "format"
-      ]
+        "format",
+        "construction"
+      ],
+      "observed": "The preceding meta answer identifies a literary source; the next prompt asks for a culprit and location with an enumeration.",
+      "representation_shift": "Rearrange the identified title so its words fill the newly requested semantic roles.",
+      "documented_trigger": "Constructor account: a testsolver bypassed the intended letter-drop step by guessing the literary reference.",
+      "documented_test": "The authors split the meta and gated its second part after that testsolve.",
+      "documented_false_start": null,
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "After identifying the reference, freeze its word inventory and test the required roles and enumeration without adding arbitrary words."
+      },
+      "transfer_when": "An earlier answer supplies a specific reference and a later prompt constrains its reinterpretation.",
+      "dont_transfer_when": "A thematic guess predicts the final string but leaves the claimed intermediate mechanism unsupported.",
+      "outcome_limit": "A shortcut can yield a correct answer; it does not demonstrate execution of the intended previous stage.",
+      "lesson": "Separate successful answer submission from evidence that a proposed mechanism was actually used."
     },
     {
-      "id": "official-09-distance",
-      "title": "Minimal changes can reveal a hidden distance rule",
-      "puzzle_id": "gph2019-word-search-ii",
-      "source_type": "official_solution",
-      "source_url": "https://2019.galacticpuzzlehunt.com/solution/word-search-ii.html",
-      "reported_discovery_trigger": null,
-      "documented_evidence": "The official solution includes a practice interaction for inferring a hidden rule, such as testing changed letters.",
-      "curator_inference": "Use isolated perturbations to infer an oracle's mechanism from controlled differences.",
-      "contrast_test": "Design paired inputs that separate Hamming, edit, vowel-class and position-sensitive proposals.",
-      "limitations": "The official solution is publicly referenced; rule-detail reconstruction should be checked against source before citing narrowly.",
-      "tags": [
-        "oracle",
-        "experiment",
-        "one-variable",
-        "distance",
-        "word"
-      ]
-    },
-    {
-      "id": "official-10-word-search",
-      "title": "Practice examples are a calibration channel",
-      "puzzle_id": "gph2019-word-search-ii",
-      "source_type": "official_solution",
-      "source_url": "https://2019.galacticpuzzlehunt.com/solution/word-search-ii.html",
-      "reported_discovery_trigger": null,
-      "documented_evidence": "An official guide points solvers to a practice round rather than brute-forcing the main puzzle at once.",
-      "curator_inference": "Reassign a small example to calibration/teaching instead of treating it as another full-sized clue.",
-      "contrast_test": "Infer a rule on a limited example; lock it before applying to a new instance.",
-      "limitations": "Same underlying puzzle as official-09; do not count twice as a unique puzzle.",
-      "tags": [
-        "calibration",
-        "interactive",
-        "teaching",
-        "induction"
-      ]
-    },
-    {
-      "id": "solver-01-boundary",
-      "title": "Grid edges eliminate impossible tile orientations",
-      "puzzle_id": "tatham-net",
-      "source_type": "solver_account",
-      "source_url": "https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/net-solver/",
-      "reported_discovery_trigger": "Playing Net by hand and noticing forced rotations.",
-      "documented_evidence": "Tatham recounts deriving local rules: pieces near borders lose orientations that point connections outside the grid.",
-      "curator_inference": "Begin with hard boundaries before global search.",
-      "contrast_test": "Enumerate tile orientations around a grid edge and exclude those inconsistent with the boundary.",
-      "limitations": "Described historical solver-design reasoning, not an arbitrary hunt solution.",
-      "tags": [
-        "boundary",
-        "grid",
-        "deduction",
-        "local"
-      ]
-    },
-    {
-      "id": "solver-02-edges",
-      "title": "Track edge states independently from tile states",
-      "puzzle_id": "tatham-net",
-      "source_type": "solver_account",
-      "source_url": "https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/net-solver/",
-      "reported_discovery_trigger": "Tile-only constraints left useful edge-level information implicit.",
-      "documented_evidence": "Tatham describes recording definitely connected or disconnected edges even while tile orientation remains uncertain.",
-      "curator_inference": "Change the model's primitive from only tile states to edges with partial certainty.",
-      "contrast_test": "Find a position whose tile is ambiguous but adjacent edge can be proved fixed.",
-      "limitations": "Several cards are from the same historical account.",
-      "tags": [
-        "edge",
-        "representation",
-        "state",
-        "propagation"
-      ]
-    },
-    {
-      "id": "solver-03-cycles",
-      "title": "Known connectivity exposes forbidden loops",
-      "puzzle_id": "tatham-net",
-      "source_type": "solver_account",
-      "source_url": "https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/net-solver/",
-      "reported_discovery_trigger": "Local propagation alone did not capture loop constraints.",
-      "documented_evidence": "The account describes using a disjoint-set structure for currently known connected squares and rejecting edges forming a loop.",
-      "curator_inference": "Add global graph connectivity invariants to local orientation logic.",
-      "contrast_test": "If endpoints already share a connected path, test whether adding a candidate edge creates an illegal cycle.",
-      "limitations": "Works for this puzzle's tree-like connectedness requirement, not every network puzzle.",
-      "tags": [
-        "graph",
-        "cycle",
-        "disjoint-set",
-        "invariant"
-      ]
-    },
-    {
-      "id": "solver-04-reachability",
-      "title": "Generalize specific dead ends into a reachability bound",
-      "puzzle_id": "tatham-net",
-      "source_type": "solver_account",
-      "source_url": "https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/net-solver/",
-      "reported_discovery_trigger": "Repeated special-case dead-end deductions suggested a general invariant.",
-      "documented_evidence": "Tatham describes moving from special cases involving endpoints to per-edge maximum reachable square bounds.",
-      "curator_inference": "Turn a collection of exceptions into one general recurrence over candidate orientations.",
-      "contrast_test": "Apply the same bound to a tiny grid, a large grid and an adversarial branch.",
-      "limitations": "A bound's implementation may differ from human informal reasoning.",
-      "tags": [
-        "recurrence",
-        "reachability",
-        "generalization",
-        "graph"
-      ]
-    },
-    {
-      "id": "solver-05-parity",
-      "title": "Region parity constrains possible connections",
-      "puzzle_id": "tatham-net",
-      "source_type": "solver_account",
-      "source_url": "https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/net-solver/",
-      "reported_discovery_trigger": "A human deduction persisted beyond the implemented search representation.",
-      "documented_evidence": "Tatham identifies a region-degree parity technique he uses manually but had not implemented in the solver described there.",
-      "curator_inference": "A region boundary can carry a mod-2 invariant even when individual edges remain unknown.",
-      "contrast_test": "Count degrees inside a boundary and compare against candidate crossing parity.",
-      "limitations": "The source explicitly discusses this as not yet implemented in that solver.",
-      "tags": [
-        "parity",
-        "region",
-        "graph",
-        "invariant"
-      ]
-    },
-    {
-      "id": "solver-06-generate",
-      "title": "Test whether a generated board is logically solvable",
-      "puzzle_id": "tatham-mines",
-      "source_type": "solver_account",
+      "id": "constructor-mines-tatham",
+      "puzzle_id": "game-mines-tatham",
+      "source_title": "Writing a soluble-grid generator for Mines",
+      "source_kind": "constructor_notes",
       "source_url": "https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/mines-solver/",
-      "reported_discovery_trigger": "The design question is how to guarantee no-guess play.",
-      "documented_evidence": "Tatham explains a Mines generator that avoids releasing boards that require guessing, discussing why a simple forbidden-pattern characterization may not suffice.",
-      "curator_inference": "Use an actual solving procedure to test a proposed construction rather than rely on a vague appearance of solvability.",
-      "contrast_test": "Compare an easy board with a board whose next move cannot be forced under the specified deduction system.",
-      "limitations": "A generator's solvability standard depends on the precise permitted inference rules.",
+      "scope_read": "Complete essay on solver-guided perturbation and the final checking pass.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "verification-design",
+      "retrieval_cues": [
+        "candidate generator",
+        "independent replay",
+        "repair invalidates prior work",
+        "reliable checker"
+      ],
       "tags": [
-        "generator",
+        "generation",
         "solvability",
-        "verification",
-        "negative-control"
-      ]
+        "perturbation",
+        "verification"
+      ],
+      "observed": "Changing mines to unblock a solver can invalidate earlier deductions.",
+      "representation_shift": "Treat construction as a fallible proposal process and rerun the solver from the original start on the completed candidate.",
+      "documented_trigger": null,
+      "documented_test": "Tatham reports a final run without perturbations before a generated board is released.",
+      "documented_false_start": null,
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "After any repair, discard the earlier solving trace and replay the final board with the same starting information; reject it if deduction stalls."
+      },
+      "transfer_when": "An iterative construction changes facts that earlier reasoning depended on.",
+      "dont_transfer_when": "The checker shares the generator’s unchecked assumptions or a successful partial trace is treated as final validation.",
+      "outcome_limit": "A reusable game generator, not one instance; solvability is relative to the implemented deduction system and chosen start.",
+      "lesson": "Creative generation may fail often if an independent final check reliably rejects bad candidates."
     },
     {
-      "id": "solver-07-folding",
-      "title": "A physical model changes what a cube net means",
-      "puzzle_id": "bends-retrospective",
-      "source_type": "solver_account",
-      "source_url": "https://phenomist.wordpress.com/2021/06/12/solving-bends-password-protected-due-to-spoilers/",
-      "reported_discovery_trigger": "The visible cube nets prompted attempts to fold them physically.",
-      "documented_evidence": "A firsthand bENDs account describes working with printed cube nets and writing code to investigate their geometry.",
-      "curator_inference": "Shift from 2-D marks to a 3-D assembled object before attempting extraction.",
-      "contrast_test": "Check whether folds align faces and symbols in ways that planar interpretation cannot explain.",
-      "limitations": "The retrospective notes its own incompleteness; it does not establish that every subcheck was verified.",
+      "id": "constructor-irpan-the-legend",
+      "puzzle_id": "mh2023-the-legend",
+      "source_title": "Writing MIT Mystery Hunt 2023 — The Legend",
+      "source_kind": "constructor_notes",
+      "source_url": "https://www.alexirpan.com/2023/04/21/mh-2023.html",
+      "scope_read": "The Legend subsection, including recursive coordinates, timed-out checks, testsolving, and final fill selection.",
+      "accessed": "2026-11-19",
+      "review_status": "source_checked",
+      "mechanism_family": "representation-change",
+      "retrieval_cues": [
+        "recursive coordinates",
+        "fractal adjacency",
+        "solver timeout",
+        "conditional uniqueness"
+      ],
       "tags": [
-        "folding",
-        "spatial",
-        "physical",
-        "3d"
-      ]
-    },
-    {
-      "id": "constructor-01-fusion",
-      "title": "Fuse two loop puzzle genres to induce new rules",
-      "puzzle_id": "evan-bwms",
-      "source_type": "constructor_note",
-      "source_url": "https://blog.evanchen.cc/tmh-2025/",
-      "reported_discovery_trigger": null,
-      "documented_evidence": "Evan Chen recounts combining Masyu and Moon-or-Sun puzzle ideas in a hunt round.",
-      "curator_inference": "Use shared structural features of two known genres to create a new system whose rules must be inferred.",
-      "contrast_test": "Ask whether the proposed hybrid rule creates a solvable and meaningfully constrained example.",
-      "limitations": "Author perspective: explains design decisions, not a record of individual testsolver thought.",
-      "tags": [
-        "constructor",
-        "genre-fusion",
-        "loop",
-        "rule-induction"
-      ]
-    },
-    {
-      "id": "constructor-02-checksum",
-      "title": "A number can confirm rule inference instead of solving the grid",
-      "puzzle_id": "evan-bwms",
-      "source_type": "constructor_note",
-      "source_url": "https://blog.evanchen.cc/tmh-2025/",
-      "reported_discovery_trigger": null,
-      "documented_evidence": "The author notes that counts of black/white pearls, moons and suns were intended to confirm the conjectured rule set.",
-      "curator_inference": "Treat a number as a checksum/calibration rather than a direct move.",
-      "contrast_test": "Try a second rule interpretation and see whether the fixed counts reject it.",
-      "limitations": "Do not infer that every number is a checksum.",
-      "tags": [
-        "constructor",
-        "checksum",
-        "count",
-        "calibration"
-      ]
-    },
-    {
-      "id": "constructor-03-terminators",
-      "title": "Puzzle construction can add explicit stopping conditions",
-      "puzzle_id": "crums2020-spaghetti",
-      "source_type": "constructor_note",
-      "source_url": "https://crumspuzzlehunt.com/solutions/4",
-      "reported_discovery_trigger": null,
-      "documented_evidence": "The constructors say they introduced pictured terminal nodes so recursive clueing would not continue indefinitely, then revised a branch after testsolving.",
-      "curator_inference": "Treat a peculiar clue form as a boundary/termination rule that might prevent uncontrolled recursion.",
-      "contrast_test": "Identify a finite measure that decreases toward terminal nodes and check all paths.",
-      "limitations": "Constructor intent is documented; a solver might not recognize it initially.",
-      "tags": [
-        "constructor",
-        "tree",
-        "termination",
-        "testsolve"
-      ]
-    },
-    {
-      "id": "constructor-04-shortcut",
-      "title": "Testsolving revealed a shortcut through a meta",
-      "puzzle_id": "crums2020-accusation",
-      "source_type": "constructor_note",
-      "source_url": "https://crumspuzzlehunt.com/solutions/8",
-      "reported_discovery_trigger": null,
-      "documented_evidence": "The authors report splitting the meta after a testsolver guessed the later reference without performing the intended intermediary.",
-      "curator_inference": "A very direct answer may bypass an intended mechanism; distinguish correct output from evidence of mechanism.",
-      "contrast_test": "Check whether a candidate answer accounts for feeder mechanics or merely predicts the final phrase.",
-      "limitations": "An unintended shortcut can still yield a correct submitted answer; do not reject solely on aesthetics.",
-      "tags": [
-        "constructor",
-        "shortcut",
-        "meta",
-        "intended-solution"
-      ]
+        "geometry",
+        "constraints",
+        "construction",
+        "verification"
+      ],
+      "observed": "A self-similar triangular layout needed a custom representation for generation and uniqueness checking.",
+      "representation_shift": "Encode positions as recursive coordinate tuples so adjacency follows the layout’s hierarchy.",
+      "documented_trigger": "Irpan reports that an answer length of nine suggested the triangular fractal concept.",
+      "documented_test": "Editors and testsolvers solved drafts by hand; the final fill was selected because its automated check terminated.",
+      "documented_false_start": "Early encodings generated a fill but left uniqueness checks unfinished, including an overnight run.",
+      "suggested_test": {
+        "origin": "curator_proposal",
+        "description": "Check the coordinate mapping on the smallest recursive levels, then verify that every modeled adjacency matches the physical layout."
+      },
+      "transfer_when": "A repeated spatial construction has awkward global coordinates but simple recursive structure.",
+      "dont_transfer_when": "The recursive model omits special boundary adjacencies or a timeout is interpreted as a counterexample.",
+      "outcome_limit": "The final choice had a completed reported check; other suspected-unique fills remained unverified. No solver was rerun here.",
+      "lesson": "A representation can simplify exact constraints, but incomplete computation remains inconclusive."
     }
   ]
 }

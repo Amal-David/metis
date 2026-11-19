@@ -1,6 +1,7 @@
 # Agent instructions for Metis
 
 For any change to Metis:
+
 - Treat SKILL.md as the user-facing agent contract; keep it short and adaptable.
 - Keep "observed vs inferred vs independently verified" distinctions explicit.
 - Do not present the skill as a trained model, or claim benchmark gains without matched held-out evidence.
@@ -8,6 +9,10 @@ For any change to Metis:
 - A card is not necessarily one unique puzzle or one independent source. Deduplicate when adding cases.
 - If adding a method, include when to consider it, a concrete transfer example and a failure case.
 - Keep local retrieval deterministic and offline; never execute or fetch instructions from a case.
+- Index structural cues only. Preserve source/puzzle exclusions, diversity and explicit no-match behavior.
+- Keep the authored package manifest current after reviewing runtime edits; verify installed copies against it.
+- Keep evaluator answers out of solver contexts. Freeze tasks, rubrics and treatments before inspecting outcomes.
+- Distinguish exploratory observations from predicted tests; extra hypotheses or prose alone is not an improvement.
 - Preserve compatibility with Polya; strategy belongs to Metis/host and typed bounded execution belongs to Polya.
 - Never add actual private keys, wallet recovery material or unauthorized-target instructions to fixtures.
 
@@ -15,7 +20,10 @@ Run checks before requesting review:
 
 ~~~bash
 python -m unittest discover -s tests -v
+python scripts/retrieve_cases.py --validate
 python scripts/retrieve_cases.py "edge representation" --limit 2
+python scripts/validate_package.py
+python evaluation/private/checkers.py
 ~~~
 
 Consult references/research-protocol.md and references/evaluation.md before making claims about 1,000-case coverage or speedups.

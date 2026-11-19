@@ -1,0 +1,53 @@
+{
+  "suite_id": "metis-diagnostic-20261119-v1",
+  "tasks": [
+    {
+      "id": "Q01",
+      "prompt": "A square-tile scanner gives these readings. Tiles touch only along full sides. One tile: 4. Two tiles sharing a side: 6. Four tiles in a 2-by-2 block: 8. Four tiles in a straight row: 10. Four isolated tiles: 16. Propose a simple mechanism fitting the readings and predict, under that mechanism, the reading for tiles at integer cells (0,0), (1,0), (2,0), (0,1), (2,1), (0,2)? Explain how your method accounts for both four-tile examples, and state whether the observations establish a unique unrestricted rule. Coordinates identify occupied cells; all other cells are empty."
+    },
+    {
+      "id": "Q02",
+      "prompt": "A two-digit display uses seven-segment digits with segments named a=top, b=upper right, c=lower right, d=bottom, e=lower left, f=upper left, g=middle. Its digit sets are 0:abcdef, 1:bc, 2:abdeg, 3:abcdg, 4:bcfg, 5:acdfg, 6:acdefg, 7:abc, 8:abcdefg, 9:abcdfg. An update counter reports 11→77: 2, 12→21: 10, 88→88: 0, and 00→88: 2. Propose a simple mechanism fitting these readings. Under that mechanism, predict 23→59, explaining the two positions separately. State whether these observations establish a unique unrestricted rule."
+    },
+    {
+      "id": "Q03",
+      "prompt": "A square transparent card has four distinct symbols at corner positions. On its original front: triangle NW, circle NE, star SE, square SW. The observed card has circle NW, triangle NE, square SE, star SW. It was transformed by one of the eight symmetries of a square (rotations and reflections). Which symmetry maps the original front to the observation? Is any rotation alone sufficient? The original front also has a small dot at normalized coordinates (0.20,0.35), with x rightward and y downward. Give the dot's observed coordinates."
+    },
+    {
+      "id": "Q04",
+      "prompt": "A sorter has four numbered positions. A fixed unknown subset of the six position pairs is allowed; one action swaps the contents at an allowed pair. Its display is the minimum number of actions needed to reach 1234. Verified readings are 2134:1, 1324:1, 1243:1, 3214:3, 1432:3, 4231:5. Identify all allowed position pairs. Then give the display for 3412 and a shortest sequence of resulting arrangements ending at 1234."
+    },
+    {
+      "id": "Q05",
+      "prompt": "A note calls a three-digit code ABC 'uniquely determined'. Each digit is an integer from 1 through 6, A+B=5, B+C=7, and B is even. There are no other conditions. What can actually be concluded about the code? Give every compatible code and, if needed, one yes/no question about a digit that would resolve the remaining uncertainty."
+    },
+    {
+      "id": "Q06",
+      "prompt": "On a 3-row, 4-column rectangular grid, a path must visit every cell exactly once. Each move is one cell up, down, left, or right. It must start at (row 1,column 1) and finish at (row 3,column 3). Does such a path exist? Supply a path if yes, or a conclusive reason if no."
+    },
+    {
+      "id": "Q07",
+      "prompt": "Each row in a log has four decimal digits a b c d obeying c=(a+2b) mod 10 and d=(2a+b) mod 10. The transcription is: [2,7,6,1]; [4,?,6,9]; [8,3,4,8]; [6,9,4,1]. Exactly one visible digit in the entire transcription is wrong; '?' hides one digit. Recover the hidden digit and the unique correction, or report all alternatives if it is not unique. Check both equations for each repaired row."
+    },
+    {
+      "id": "Q08",
+      "prompt": "Twelve independent fair bits were generated. After examining all nine overlapping contiguous windows of length four, an analyst highlighted a window of 1111 and reported probability 1/16. The analyst would equally have highlighted 0000 anywhere, if present. For this actual reporting rule, what is the exact probability that at least one highlight is possible? Explain whether 1/16 assesses that reporting rule. An exact fraction or finite enumeration with numerator and denominator is acceptable; do not assume overlapping windows are independent."
+    },
+    {
+      "id": "Q09",
+      "prompt": "An oracle hides one of H0,H1,H2,H3,H4,H5,H6,H7. Their three-bit labels are their binary indices: H0=000 through H7=111. Query A returns the first bit; B the second; C the third. Query D returns 1 only for H0, otherwise 0. Each query costs one, and you have at most three. Choose your first query to minimize the worst-case number needed to identify the state. State what each possible reply would leave possible and give your continuation plan. You have not received a reply yet: report your query plan, not an invented hidden state."
+    },
+    {
+      "id": "Q10",
+      "prompt": "Solve 3x+7=28 for x. A concise answer is sufficient."
+    },
+    {
+      "id": "Q11",
+      "prompt": "Exactly one of three boxes A, B, C contains a token. Their signs say A: 'The token is in B.' B: 'The token is not in B.' C: 'The token is not in A.' Exactly one sign is true. Which box contains the token? Verify the three sign truth values for your answer."
+    },
+    {
+      "id": "Q12",
+      "prompt": "You must divide the six weights 2,3,4,5,6,7 into two groups of three. Minimize the absolute difference between the group totals. Give an optimal division and a reason no division can do better."
+    }
+  ]
+}
