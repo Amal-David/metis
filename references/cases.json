@@ -1,0 +1,391 @@
+{
+  "version": "1.0.0",
+  "description": "Twenty-one curated teaching cards, not twenty-one unique source documents or puzzles. Distinguish sourced evidence from curator inference. Not a training-rights-cleared corpus.",
+  "cards": [
+    {
+      "id": "official-01-geodesic",
+      "title": "Flag mashups lead to geographic lines",
+      "puzzle_id": "crums2020-mustard",
+      "source_type": "official_solution",
+      "source_url": "https://crumspuzzlehunt.com/solutions/2",
+      "reported_discovery_trigger": null,
+      "documented_evidence": "An official solution uses mashups of national flags and a map/geodesic construction.",
+      "curator_inference": "Consider shifting from flag imagery to relationships among countries and geographic paths.",
+      "contrast_test": "A proposed geographic rule should predict intersections or destinations for cases not used to tune it.",
+      "limitations": "Presented solve, not a dated human discovery history.",
+      "tags": [
+        "geometric",
+        "map",
+        "geodesic",
+        "visual",
+        "relation"
+      ]
+    },
+    {
+      "id": "official-02-chalice",
+      "title": "Word lengths correspond to diagram diagonals",
+      "puzzle_id": "crums2020-white",
+      "source_type": "official_solution",
+      "source_url": "https://crumspuzzlehunt.com/solutions/3",
+      "reported_discovery_trigger": null,
+      "documented_evidence": "The solution relates clue-word lengths to the lengths of sloping diagonals of a triangular chalice grid.",
+      "curator_inference": "Treat visible grid capacity and length distribution as mutual constraints, not decorative structure.",
+      "contrast_test": "Try placing independently solved clue words and check overlapping letters without discretionary adjustments.",
+      "limitations": "An official explanation; initial inference chronology is unknown.",
+      "tags": [
+        "grid",
+        "length",
+        "layout",
+        "word",
+        "constraint"
+      ]
+    },
+    {
+      "id": "official-03-riffle",
+      "title": "Colored stems specify an interleaving operation",
+      "puzzle_id": "crums2020-white",
+      "source_type": "official_solution",
+      "source_url": "https://crumspuzzlehunt.com/solutions/3",
+      "reported_discovery_trigger": null,
+      "documented_evidence": "The solution uses the chalice's colored stem bands to determine how extracted colored letters are riffled.",
+      "curator_inference": "Read a repeated color pattern as an operation/order rather than additional data.",
+      "contrast_test": "Freeze the band-to-letter mapping and check it across multiple chalices.",
+      "limitations": "Same puzzle/source as another card; not independent case.",
+      "tags": [
+        "color",
+        "interleave",
+        "order",
+        "extraction"
+      ]
+    },
+    {
+      "id": "official-04-tree",
+      "title": "Pictures as terminal clues in a recursive tree",
+      "puzzle_id": "crums2020-spaghetti",
+      "source_type": "official_solution",
+      "source_url": "https://crumspuzzlehunt.com/solutions/4",
+      "reported_discovery_trigger": null,
+      "documented_evidence": "The official solution describes a rooted tree: images at leaves are identified and reparsed into crossword-style clues, which recursively combine.",
+      "curator_inference": "Reframe the diagram as a computation graph where each node's output becomes a parent clue.",
+      "contrast_test": "Predict an unworked internal node from its children, then check propagation toward the root.",
+      "limitations": "This teaches the published mechanism, not a firsthand solver breakthrough.",
+      "tags": [
+        "tree",
+        "recursive",
+        "graph",
+        "visual",
+        "word"
+      ]
+    },
+    {
+      "id": "official-05-reparse",
+      "title": "Meaning depends on reparsing word boundaries",
+      "puzzle_id": "crums2020-spaghetti",
+      "source_type": "official_solution",
+      "source_url": "https://crumspuzzlehunt.com/solutions/4",
+      "reported_discovery_trigger": null,
+      "documented_evidence": "The solution illustrates pictures for NO and THIGH being reparsed as NOT HIGH, a clue for LOW.",
+      "curator_inference": "Words can be meaningful *after* boundary changes; surface word segmentation is not fixed.",
+      "contrast_test": "Test if several sibling nodes yield valid downstream clues under the same reparsing rule.",
+      "limitations": "Do not treat arbitrary phrase punning as a proof of intended mechanism.",
+      "tags": [
+        "reparse",
+        "word",
+        "boundary",
+        "semantic",
+        "recursive"
+      ]
+    },
+    {
+      "id": "official-06-cutcoin",
+      "title": "Flavor geometry motivates an unusual crossword shape",
+      "puzzle_id": "crums2020-plum",
+      "source_type": "official_solution",
+      "source_url": "https://crumspuzzlehunt.com/solutions/6",
+      "reported_discovery_trigger": null,
+      "documented_evidence": "The official solution links a cut Guadeloupe coin with an irregularly shaped gridless crossword.",
+      "curator_inference": "Treat a reference object's shape as a constraint on layout and manipulation.",
+      "contrast_test": "Before reading extracted words, check whether the proposed shape accounts for the full grid structure.",
+      "limitations": "Historical reference and shape are supplied by source; creative motivation is curator inference.",
+      "tags": [
+        "shape",
+        "crossword",
+        "layout",
+        "physical",
+        "analogy"
+      ]
+    },
+    {
+      "id": "official-07-timeline",
+      "title": "Testimony paragraphs form an interleaved timeline",
+      "puzzle_id": "crums2020-locked-room",
+      "source_type": "official_solution",
+      "source_url": "https://crumspuzzlehunt.com/solutions/7",
+      "reported_discovery_trigger": null,
+      "documented_evidence": "The official solution combines testimony paragraphs by Clue-character turn order to reconstruct events.",
+      "curator_inference": "Reframe independent narratives as interleaved observations of one evolving state.",
+      "contrast_test": "Use ordering to deduce a location at an unseen turn, and reject sequences violating other testimony.",
+      "limitations": "Full-solution chronology is not necessarily solver discovery chronology.",
+      "tags": [
+        "timeline",
+        "interleave",
+        "logic",
+        "state",
+        "narrative"
+      ]
+    },
+    {
+      "id": "official-08-meta",
+      "title": "A phrase changes role from answer to instruction for next puzzle",
+      "puzzle_id": "crums2020-accusation",
+      "source_type": "official_solution",
+      "source_url": "https://crumspuzzlehunt.com/solutions/8",
+      "reported_discovery_trigger": null,
+      "documented_evidence": "The final solution uses a Sherlock Holmes reference and an enumeration to obtain SCARLET IN A STUDY.",
+      "curator_inference": "Treat a previous answer as input to a second-stage transformation, not only as an endpoint.",
+      "contrast_test": "Verify the reinterpreted phrase matches the requested answer format and prior constraints.",
+      "limitations": "Multi-stage hunt conventions may not transfer to standalone tasks.",
+      "tags": [
+        "meta",
+        "wordplay",
+        "reparse",
+        "format"
+      ]
+    },
+    {
+      "id": "official-09-distance",
+      "title": "Minimal changes can reveal a hidden distance rule",
+      "puzzle_id": "gph2019-word-search-ii",
+      "source_type": "official_solution",
+      "source_url": "https://2019.galacticpuzzlehunt.com/solution/word-search-ii.html",
+      "reported_discovery_trigger": null,
+      "documented_evidence": "The official solution includes a practice interaction for inferring a hidden rule, such as testing changed letters.",
+      "curator_inference": "Use isolated perturbations to infer an oracle's mechanism from controlled differences.",
+      "contrast_test": "Design paired inputs that separate Hamming, edit, vowel-class and position-sensitive proposals.",
+      "limitations": "The official solution is publicly referenced; rule-detail reconstruction should be checked against source before citing narrowly.",
+      "tags": [
+        "oracle",
+        "experiment",
+        "one-variable",
+        "distance",
+        "word"
+      ]
+    },
+    {
+      "id": "official-10-word-search",
+      "title": "Practice examples are a calibration channel",
+      "puzzle_id": "gph2019-word-search-ii",
+      "source_type": "official_solution",
+      "source_url": "https://2019.galacticpuzzlehunt.com/solution/word-search-ii.html",
+      "reported_discovery_trigger": null,
+      "documented_evidence": "An official guide points solvers to a practice round rather than brute-forcing the main puzzle at once.",
+      "curator_inference": "Reassign a small example to calibration/teaching instead of treating it as another full-sized clue.",
+      "contrast_test": "Infer a rule on a limited example; lock it before applying to a new instance.",
+      "limitations": "Same underlying puzzle as official-09; do not count twice as a unique puzzle.",
+      "tags": [
+        "calibration",
+        "interactive",
+        "teaching",
+        "induction"
+      ]
+    },
+    {
+      "id": "solver-01-boundary",
+      "title": "Grid edges eliminate impossible tile orientations",
+      "puzzle_id": "tatham-net",
+      "source_type": "solver_account",
+      "source_url": "https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/net-solver/",
+      "reported_discovery_trigger": "Playing Net by hand and noticing forced rotations.",
+      "documented_evidence": "Tatham recounts deriving local rules: pieces near borders lose orientations that point connections outside the grid.",
+      "curator_inference": "Begin with hard boundaries before global search.",
+      "contrast_test": "Enumerate tile orientations around a grid edge and exclude those inconsistent with the boundary.",
+      "limitations": "Described historical solver-design reasoning, not an arbitrary hunt solution.",
+      "tags": [
+        "boundary",
+        "grid",
+        "deduction",
+        "local"
+      ]
+    },
+    {
+      "id": "solver-02-edges",
+      "title": "Track edge states independently from tile states",
+      "puzzle_id": "tatham-net",
+      "source_type": "solver_account",
+      "source_url": "https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/net-solver/",
+      "reported_discovery_trigger": "Tile-only constraints left useful edge-level information implicit.",
+      "documented_evidence": "Tatham describes recording definitely connected or disconnected edges even while tile orientation remains uncertain.",
+      "curator_inference": "Change the model's primitive from only tile states to edges with partial certainty.",
+      "contrast_test": "Find a position whose tile is ambiguous but adjacent edge can be proved fixed.",
+      "limitations": "Several cards are from the same historical account.",
+      "tags": [
+        "edge",
+        "representation",
+        "state",
+        "propagation"
+      ]
+    },
+    {
+      "id": "solver-03-cycles",
+      "title": "Known connectivity exposes forbidden loops",
+      "puzzle_id": "tatham-net",
+      "source_type": "solver_account",
+      "source_url": "https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/net-solver/",
+      "reported_discovery_trigger": "Local propagation alone did not capture loop constraints.",
+      "documented_evidence": "The account describes using a disjoint-set structure for currently known connected squares and rejecting edges forming a loop.",
+      "curator_inference": "Add global graph connectivity invariants to local orientation logic.",
+      "contrast_test": "If endpoints already share a connected path, test whether adding a candidate edge creates an illegal cycle.",
+      "limitations": "Works for this puzzle's tree-like connectedness requirement, not every network puzzle.",
+      "tags": [
+        "graph",
+        "cycle",
+        "disjoint-set",
+        "invariant"
+      ]
+    },
+    {
+      "id": "solver-04-reachability",
+      "title": "Generalize specific dead ends into a reachability bound",
+      "puzzle_id": "tatham-net",
+      "source_type": "solver_account",
+      "source_url": "https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/net-solver/",
+      "reported_discovery_trigger": "Repeated special-case dead-end deductions suggested a general invariant.",
+      "documented_evidence": "Tatham describes moving from special cases involving endpoints to per-edge maximum reachable square bounds.",
+      "curator_inference": "Turn a collection of exceptions into one general recurrence over candidate orientations.",
+      "contrast_test": "Apply the same bound to a tiny grid, a large grid and an adversarial branch.",
+      "limitations": "A bound's implementation may differ from human informal reasoning.",
+      "tags": [
+        "recurrence",
+        "reachability",
+        "generalization",
+        "graph"
+      ]
+    },
+    {
+      "id": "solver-05-parity",
+      "title": "Region parity constrains possible connections",
+      "puzzle_id": "tatham-net",
+      "source_type": "solver_account",
+      "source_url": "https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/net-solver/",
+      "reported_discovery_trigger": "A human deduction persisted beyond the implemented search representation.",
+      "documented_evidence": "Tatham identifies a region-degree parity technique he uses manually but had not implemented in the solver described there.",
+      "curator_inference": "A region boundary can carry a mod-2 invariant even when individual edges remain unknown.",
+      "contrast_test": "Count degrees inside a boundary and compare against candidate crossing parity.",
+      "limitations": "The source explicitly discusses this as not yet implemented in that solver.",
+      "tags": [
+        "parity",
+        "region",
+        "graph",
+        "invariant"
+      ]
+    },
+    {
+      "id": "solver-06-generate",
+      "title": "Test whether a generated board is logically solvable",
+      "puzzle_id": "tatham-mines",
+      "source_type": "solver_account",
+      "source_url": "https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/mines-solver/",
+      "reported_discovery_trigger": "The design question is how to guarantee no-guess play.",
+      "documented_evidence": "Tatham explains a Mines generator that avoids releasing boards that require guessing, discussing why a simple forbidden-pattern characterization may not suffice.",
+      "curator_inference": "Use an actual solving procedure to test a proposed construction rather than rely on a vague appearance of solvability.",
+      "contrast_test": "Compare an easy board with a board whose next move cannot be forced under the specified deduction system.",
+      "limitations": "A generator's solvability standard depends on the precise permitted inference rules.",
+      "tags": [
+        "generator",
+        "solvability",
+        "verification",
+        "negative-control"
+      ]
+    },
+    {
+      "id": "solver-07-folding",
+      "title": "A physical model changes what a cube net means",
+      "puzzle_id": "bends-retrospective",
+      "source_type": "solver_account",
+      "source_url": "https://phenomist.wordpress.com/2021/06/12/solving-bends-password-protected-due-to-spoilers/",
+      "reported_discovery_trigger": "The visible cube nets prompted attempts to fold them physically.",
+      "documented_evidence": "A firsthand bENDs account describes working with printed cube nets and writing code to investigate their geometry.",
+      "curator_inference": "Shift from 2-D marks to a 3-D assembled object before attempting extraction.",
+      "contrast_test": "Check whether folds align faces and symbols in ways that planar interpretation cannot explain.",
+      "limitations": "The retrospective notes its own incompleteness; it does not establish that every subcheck was verified.",
+      "tags": [
+        "folding",
+        "spatial",
+        "physical",
+        "3d"
+      ]
+    },
+    {
+      "id": "constructor-01-fusion",
+      "title": "Fuse two loop puzzle genres to induce new rules",
+      "puzzle_id": "evan-bwms",
+      "source_type": "constructor_note",
+      "source_url": "https://blog.evanchen.cc/tmh-2025/",
+      "reported_discovery_trigger": null,
+      "documented_evidence": "Evan Chen recounts combining Masyu and Moon-or-Sun puzzle ideas in a hunt round.",
+      "curator_inference": "Use shared structural features of two known genres to create a new system whose rules must be inferred.",
+      "contrast_test": "Ask whether the proposed hybrid rule creates a solvable and meaningfully constrained example.",
+      "limitations": "Author perspective: explains design decisions, not a record of individual testsolver thought.",
+      "tags": [
+        "constructor",
+        "genre-fusion",
+        "loop",
+        "rule-induction"
+      ]
+    },
+    {
+      "id": "constructor-02-checksum",
+      "title": "A number can confirm rule inference instead of solving the grid",
+      "puzzle_id": "evan-bwms",
+      "source_type": "constructor_note",
+      "source_url": "https://blog.evanchen.cc/tmh-2025/",
+      "reported_discovery_trigger": null,
+      "documented_evidence": "The author notes that counts of black/white pearls, moons and suns were intended to confirm the conjectured rule set.",
+      "curator_inference": "Treat a number as a checksum/calibration rather than a direct move.",
+      "contrast_test": "Try a second rule interpretation and see whether the fixed counts reject it.",
+      "limitations": "Do not infer that every number is a checksum.",
+      "tags": [
+        "constructor",
+        "checksum",
+        "count",
+        "calibration"
+      ]
+    },
+    {
+      "id": "constructor-03-terminators",
+      "title": "Puzzle construction can add explicit stopping conditions",
+      "puzzle_id": "crums2020-spaghetti",
+      "source_type": "constructor_note",
+      "source_url": "https://crumspuzzlehunt.com/solutions/4",
+      "reported_discovery_trigger": null,
+      "documented_evidence": "The constructors say they introduced pictured terminal nodes so recursive clueing would not continue indefinitely, then revised a branch after testsolving.",
+      "curator_inference": "Treat a peculiar clue form as a boundary/termination rule that might prevent uncontrolled recursion.",
+      "contrast_test": "Identify a finite measure that decreases toward terminal nodes and check all paths.",
+      "limitations": "Constructor intent is documented; a solver might not recognize it initially.",
+      "tags": [
+        "constructor",
+        "tree",
+        "termination",
+        "testsolve"
+      ]
+    },
+    {
+      "id": "constructor-04-shortcut",
+      "title": "Testsolving revealed a shortcut through a meta",
+      "puzzle_id": "crums2020-accusation",
+      "source_type": "constructor_note",
+      "source_url": "https://crumspuzzlehunt.com/solutions/8",
+      "reported_discovery_trigger": null,
+      "documented_evidence": "The authors report splitting the meta after a testsolver guessed the later reference without performing the intended intermediary.",
+      "curator_inference": "A very direct answer may bypass an intended mechanism; distinguish correct output from evidence of mechanism.",
+      "contrast_test": "Check whether a candidate answer accounts for feeder mechanics or merely predicts the final phrase.",
+      "limitations": "An unintended shortcut can still yield a correct submitted answer; do not reject solely on aesthetics.",
+      "tags": [
+        "constructor",
+        "shortcut",
+        "meta",
+        "intended-solution"
+      ]
+    }
+  ]
+}
